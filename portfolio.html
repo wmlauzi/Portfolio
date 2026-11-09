@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wanangwa Mlauzi — Technology Generalist, Malawi</title>
+<meta name="description" content="Portfolio of Wanangwa Mlauzi, a technology generalist in Malawi working across software, AgriTech and digital products.">
+<meta property="og:title" content="Wanangwa Mlauzi — Technology. Ideas. Real-world solutions.">
+<meta property="og:description" content="Technology generalist with a background in agriculture and a growing foundation in computer science.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17191F;--paper:#F4F0E8;--lime:#C7F36B;--mute:#6b6e75;--white:#fff;--line:rgba(23,25,31,.16);--bg:var(--paper);--fg:var(--ink);--card:var(--white);--dark:#17191F;--darkfg:#F4F0E8;--dm:#888B91;
+--h:"Space Grotesk",system-ui,sans-serif;--b:Inter,system-ui,sans-serif;--m:"JetBrains Mono",ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--fg:#F4F0E8;--card:#1b1e25;--line:rgba(244,240,232,.18);--mute:#9a9da3;--dark:#0a0b0e}}
+:root[data-theme="dark"]{--bg:#101216;--fg:#F4F0E8;--card:#1b1e25;--line:rgba(244,240,232,.18);--mute:#9a9da3;--dark:#0a0b0e}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--b);overflow-x:hidden}
+h1,h2,h3{font-family:var(--h);line-height:1.04;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.mono{font-family:var(--m);font-size:12px;letter-spacing:.02em}
+.w{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:112px 0}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--lime);color:var(--ink);padding:8px 12px;z-index:99}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:700 18px var(--h);text-decoration:none}
+.links{display:flex;gap:28px;align-items:center}
+.links a{text-decoration:none;font:500 13px var(--m)}
+.links a:hover{text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:6px}
+.avail{display:flex;align-items:center;gap:8px;font:12px var(--m)}
+.dot{width:8px;height:8px;border-radius:50%;background:#5fa800;box-shadow:0 0 0 0 rgba(95,168,0,.6);animation:p 2.4s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px rgba(95,168,0,0)}100%{box-shadow:0 0 0 0 rgba(95,168,0,0)}}
+.burger{display:none;background:none;border:1px solid var(--line);color:inherit;padding:8px 12px;font:12px var(--m);cursor:pointer}
+@media(max-width:860px){.burger{display:block}.avail{display:none}
+.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:16px 24px 24px;border-bottom:1px solid var(--line);gap:18px}
+.links.open{display:flex}.links a{font-size:16px}}
+/* hero */
+#home{padding-top:150px;min-height:100svh}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.eyebrow{color:var(--mute)}
+h1{font-size:clamp(42px,7.4vw,98px);margin:22px 0 26px;font-weight:700}
+h1 span{display:block;background:linear-gradient(transparent 62%,var(--lime) 62% 92%,transparent 92%);width:fit-content}
+.lede{max-width:520px;font-size:19px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 28px}
+.btn{display:inline-block;padding:14px 22px;font:500 15px var(--b);text-decoration:none;border:1.5px solid var(--fg);cursor:pointer;background:none;color:var(--fg);transition:transform .2s,background .2s}
+.btn.p{background:var(--lime);color:var(--ink);border-color:var(--ink)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--fg)}
+.art{position:relative;aspect-ratio:4/5;border:1px solid var(--line);background:var(--card);overflow:hidden}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .note{position:absolute;font:11px var(--m);color:var(--mute);background:var(--bg);padding:2px 6px}
+.art .spin{transform-origin:200px 250px;animation:sp 40s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.port {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 34%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 2px solid var(--lime);
+  background: var(--card);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+/* headings */
+h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
+.sub{max-width:560px;color:var(--mute);margin:0 0 48px}
+/* intro */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.grid3>div{padding:28px 24px 32px 0;border-right:1px solid var(--line)}
+.grid3>div:nth-child(2){padding-left:24px;margin-top:40px}.grid3>div:nth-child(3){padding-left:24px;margin-top:80px;border-right:0}
+.grid3 h3{font-size:22px;margin:10px 0}
+@media(max-width:800px){.grid3{grid-template-columns:1fr}.grid3>div,.grid3>div:nth-child(n){margin:0;padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}}
+/* work */
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.pc{grid-column:span 3;border:1px solid var(--line);background:var(--card);cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;transition:transform .25s}
+.pc:nth-child(1),.pc:nth-child(4){grid-column:span 4}.pc:nth-child(2),.pc:nth-child(3){grid-column:span 2}
+.pc:nth-child(4){grid-column:span 6}
+.pc:hover{transform:translateY(-4px)}.pc:hover .pv{background:var(--lime)}
+.pv{height:210px;border-bottom:1px solid var(--line);background:var(--dark);color:var(--dm);display:grid;place-items:center;font:11px var(--m);transition:background .25s;background-image:repeating-linear-gradient(45deg,transparent 0 12px,rgba(255,255,255,.05) 12px 13px)}
+.pc:hover .pv{color:var(--ink)}
+.pb{padding:20px 22px 24px}.pb h3{font-size:26px;margin:6px 0 8px}.pb p{margin:0 0 16px;font-size:15px;color:var(--mute)}
+.tag{display:inline-block;border:1px solid var(--fg);padding:2px 8px;font:11px var(--m)}
+.st{background:var(--lime);color:var(--ink);border-color:var(--ink)}
+@media(max-width:800px){.projects{grid-template-columns:1fr}.pc:nth-child(n){grid-column:auto}}
+/* dark band */
+.dark{background:var(--dark);color:var(--darkfg)}.dark .sub,.dark .eyebrow{color:var(--dm)}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(244,240,232,.2);border-left:1px solid rgba(244,240,232,.2)}
+.areas div{padding:28px;border-right:1px solid rgba(244,240,232,.2);border-bottom:1px solid rgba(244,240,232,.2);transition:background .2s,color .2s}
+.areas div:hover{background:var(--lime);color:var(--ink)}.areas h3{font-size:21px;margin-bottom:8px}.areas p{margin:0;font-size:15px;opacity:.85}
+@media(max-width:800px){.areas{grid-template-columns:1fr}}
+.tk{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px}
+.tk h3{font-size:18px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.tk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.tk li{border:1px solid var(--line);padding:4px 10px;font:12px var(--m)}
+@media(max-width:800px){.tk{grid-template-columns:1fr}}
+/* about */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:64px}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:36px}}
+.about p{max-width:62ch}.tl{list-style:none;padding:0;margin:0;border-left:2px solid var(--fg)}
+.tl li{padding:0 0 26px 20px;position:relative}.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;background:var(--lime);border:2px solid var(--fg)}
+.ph{color:var(--mute);font-style:italic}
+/* writing */
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ac{border:1px dashed var(--mute);padding:22px;display:flex;flex-direction:column;gap:10px;background:none;text-align:left;color:inherit;font:inherit;cursor:pointer}
+.ac:hover{border-style:solid;background:var(--card)}.ac h3{font-size:21px}.ac p{margin:0;color:var(--mute);font-size:15px}
+.cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.cats button{background:none;border:1px solid var(--line);color:inherit;padding:5px 12px;font:12px var(--m);cursor:pointer}.cats button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.empty{grid-column:1/-1;border:1px solid var(--line);padding:28px}
+@media(max-width:800px){.arts{grid-template-columns:1fr}}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+@media(max-width:900px){.contact{grid-template-columns:1fr;gap:36px}}
+.dark a{text-decoration-color:var(--lime);text-underline-offset:4px}
+form{display:grid;gap:16px}label{display:grid;gap:6px;font:12px var(--m)}
+input,textarea{font:16px var(--b);padding:12px;background:transparent;color:inherit;border:1px solid rgba(244,240,232,.4);border-radius:0;width:100%}
+input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff8f8f}.err{color:#ff9d9d;min-height:1em;font:12px var(--m)}
+#fs{min-height:1.4em;color:var(--lime)}
+/* footer */
+footer{background:var(--dark);color:var(--darkfg);padding:56px 0 40px;border-top:1px solid rgba(244,240,232,.2)}
+.fg{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}.fg a{display:block;text-decoration:none;font:13px var(--m);margin:6px 0}
+.big{font:700 clamp(30px,6vw,60px) var(--h);letter-spacing:-.03em}
+.top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:44px;height:44px;background:var(--lime);color:var(--ink);border:1.5px solid var(--ink);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;font-size:18px;z-index:15}.top.on{opacity:1;pointer-events:auto}
+/* modal */
+dialog{border:1.5px solid var(--fg);background:var(--bg);color:var(--fg);max-width:820px;width:calc(100% - 24px);max-height:88svh;padding:0;overflow:auto}
+dialog::backdrop{background:rgba(10,11,14,.7)}
+.dh{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 28px 0;gap:16px}
+.db{padding:20px 28px 32px}.db h4{font:500 12px var(--m);margin:26px 0 6px;color:var(--mute)}.db p{margin:0;max-width:62ch}
+.x{background:none;border:1px solid var(--fg);color:inherit;width:40px;height:40px;cursor:pointer;font-size:18px;flex:none}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}.shots div{aspect-ratio:16/10;border:1.5px dashed var(--mute);display:grid;place-items:center;font:11px var(--m);color:var(--mute);text-align:center;padding:8px}
+.read{max-width:66ch;font-size:18px}
+/* 404 */
+.nf{text-align:center;padding:40px 0}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="w"><nav aria-label="Primary">
+<a class="logo" href="#home">Wanangwa Mlauzi</a>
+<div class="avail"><i class="dot"></i>Open to opportunities</div>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
+<div class="links" id="lk"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#work">WORK</a><a href="#writing">WRITING</a><a href="#contact">CONTACT</a></div>
+</nav></div></header>
+
+<main id="main">
+<section id="home"><div class="w hero">
+<div>
+<p class="mono eyebrow">INDEPENDENT TECHNOLOGY ENTHUSIAST · MALAWI</p>
+<h1>Exploring technology.<span>Building things that matter.</span></h1>
+<p class="lede">I’m Wanangwa Mlauzi — a technology generalist interested in software, digital innovation and solving real-world problems through technology.</p>
+<div class="cta"><a class="btn p" href="#work">Explore my work</a><a class="btn" href="#contact">Let’s connect</a></div>
+<p class="mono">OPEN TO INTERNSHIPS, ENTRY-LEVEL ROLES &amp; COLLABORATIONS</p>
+</div>
+<div>
+<div class="art" role="img" aria-label="Creative digital illustration combining technology, innovation and connected systems">
+<svg viewBox="0 0 400 500" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+<g opacity=".25"><path d="M0 100h400M0 200h400M0 300h400M0 400h400M100 0v500M200 0v500M300 0v500"/></g>
+<g class="spin"><circle cx="200" cy="250" r="120"/><circle cx="200" cy="250" r="80" stroke-dasharray="4 6"/></g>
+<circle cx="200" cy="250" r="46" fill="#C7F36B" stroke="#17191F" stroke-width="1.5"/>
+<path d="M200 250 L320 130 H400" stroke-width="1.5"/><path d="M200 250 L80 380 H0" stroke-width="1.5"/>
+<path d="M30 60c60 40 120 40 180 0s120-40 160 0" stroke-width="1.5" opacity=".6"/>
+</svg>
+<span class="note" style="top:12px;left:12px">fig.01 — field × code</span>
+<span class="note" style="top:96px;right:12px">input: soil, sensors, people</span>
+<span class="note" style="bottom:14px;left:12px">output: useful things</span>
+<div class="port">
+  <img
+    src="assets/images/Profile-image.png"
+    alt="Wanangwa Mlauzi"
+    class="profile-img"
+  >
+</div>
+
+<p class="mono eyebrow" style="margin-top:12px">BASED IN MALAWI · OPEN TO GLOBAL OPPORTUNITIES</p>
+</div></div></section>
+
+<section id="intro" style="border-top:1px solid var(--line)"><div class="w rv">
+<h2>A little about what I do.</h2>
+<p class="sub">Three interests that feed each other.</p>
+<div class="grid3">
+<div><span class="mono">01</span><h3>Technology</h3><p>Exploring software, IT systems, emerging technologies and digital tools.</p></div>
+<div><span class="mono">02</span><h3>Building</h3><p>Turning ideas into practical websites, digital products and useful solutions.</p></div>
+<div><span class="mono">03</span><h3>Agriculture + innovation</h3><p>Combining agricultural knowledge with technology to explore better ways of addressing real-world challenges.</p></div>
+</div></div></section>
+
+<section id="work"><div class="w rv">
+<h2>Selected work.</h2>
+<p class="sub">Experiments, projects and ideas shaped by curiosity and practical problem-solving.</p>
+<div class="projects" id="pg"></div>
+</div></section>
+
+<section class="dark" id="explore"><div class="w rv">
+<h2>Areas of interest.</h2>
+<p class="sub">Interests and developing capabilities — not claims of expert-level proficiency.</p>
+<div class="areas" id="ar"></div>
+</div></section>
+
+<section id="toolkit"><div class="w rv">
+<h2>My toolkit.</h2>
+<p class="sub">Grouped by what I use it for. This list grows as I learn.</p>
+<div class="tk" id="tk"></div>
+</div></section>
+
+<section id="about" class="dark"><div class="w rv about">
+<div>
+<h2>An unconventional path into technology.</h2>
+<p>I hold a Diploma in Agriculture and I’m now pursuing Computer Science studies. My agricultural background includes practical field exposure, extension activities, farmer engagement, data collection and agricultural training.</p>
+<p>The move into technology came from wanting to understand how digital tools can improve systems, businesses and everyday problem-solving. I’m most interested where software, technology, entrepreneurship and agriculture meet.</p>
+<p>I learn best by building: practical projects, experiments and useful things. Next, I’m looking for internships, entry-level roles and collaborations where I can keep doing that alongside people who know more than I do.</p>
+</div>
+<div>
+<p class="mono" style="color:var(--dm)">EDUCATION</p>
+<ul class="tl">
+<li><b>Diploma in Agriculture</b><br><span class="ph">[Mwimba College of Agriculture]</span> · <span class="ph">[2018 — 2022]</span></li>
+<li><b>Computer Science (in progress)</b><br><span class="ph">[DMI St John the baptist University]</span> · <span class="ph">[2028]</span></li>
+</ul>
+<a class="btn p" style="color:var(--ink)" href="assets/wanangwa-mlauzi-cv.pdf" download>Download CV</a>
+<p class="mono" style="color:var(--dm);margin-top:10px">Replace assets/wanangwa-mlauzi-cv.pdf with your CV.</p>
+</div></div></section>
+
+<section id="writing"><div class="w rv">
+<h2>Thinking out loud.</h2>
+<p class="sub">Notes on technology, building and learning. Nothing here is published yet — the cards below are layout samples.</p>
+<div class="cats" id="ct" role="group" aria-label="Filter articles"></div>
+<div class="arts" id="al"></div>
+</div></section>
+
+<section id="contact" class="dark"><div class="w rv contact">
+<div>
+<h2>Have an idea? Let’s talk.</h2>
+<p>I’m interested in meaningful opportunities, collaborations and conversations around technology, software and innovation.</p>
+<p class="mono">EMAIL &nbsp;<a id="em" href="#">your.email@example.com</a><br>LINKEDIN &nbsp;<a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a><br>GITHUB &nbsp;<a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a><br>LOCATION &nbsp;Malawi<br>OPEN TO &nbsp;Internships, employment, freelance projects, collaborations</p>
+</div>
+<form id="f" novalidate aria-describedby="fs">
+<label>Name<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
+<label>Email<input name="email" type="email" autocomplete="email" required><span class="err" data-for="email"></span></label>
+<label>Subject<input name="subject" required><span class="err" data-for="subject"></span></label>
+<label>Message<textarea name="message" rows="5" required></textarea><span class="err" data-for="message"></span></label>
+<button class="btn p" type="submit" style="color:var(--ink)">Open in my email app</button>
+<p id="fs" role="status"></p>
+<p class="mono" style="color:var(--dm);margin:0">No server is connected yet, so sending opens your email app with the message filled in.</p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="w fg">
+<div><div class="big">Wanangwa Mlauzi</div><p style="max-width:40ch;color:var(--dm)">Technology generalist in Malawi, building credibility through practical work.</p><p class="mono" style="color:var(--dm)">Designed with curiosity. Built with intention.<br>© <span id="yr"></span> Wanangwa Mlauzi</p></div>
+<div><a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#writing">Writing</a><a href="#contact">Contact</a></div>
+<div><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></div>
+</div></footer>
+<button class="top" id="tp" aria-label="Back to top">↑</button>
+<dialog id="dl" aria-labelledby="dt"><div id="dc"></div></dialog>
+
+<script>
+/* ===== EDIT YOUR CONTENT HERE ===== */
+const SITE={email:"your.email@example.com",tbd:"Add your own text here."};
+const PROJECTS=[
+{id:"farm-eye",title:"Farm Eye",cat:"Digital Agriculture / AgriTech",status:"Concept",desc:"A precision-agriculture concept exploring how digital tools can support farm monitoring and agricultural decision-making.",live:"",repo:""},
+{id:"agriease-malawi",title:"AgriEase Malawi",cat:"AgriTech / Startup Concept",status:"Concept",desc:"An asset-light agricultural equipment rental marketplace concept designed to connect farmers with equipment owners and improve access to mechanisation.",live:"",repo:""},
+{id:"keso-services",title:"Keso Services",cat:"Web Development / Client Project",status:"Completed",desc:"A responsive business website designed to present services professionally and generate customer enquiries.",live:"",repo:""},
+{id:"mizu-industrial",title:"Mizu Industrial",cat:"Branding / Business Technology",status:"In development",desc:"A branding and digital business development project for a biomass energy and cooking-stove venture.",live:"",repo:""}];
+const AREAS=[["Software & web development","Learning to build responsive websites and small applications, one project at a time."],["IT & networking","Building a foundation in how systems and networks fit together, and how to troubleshoot them."],["AI & automation","Exploring how AI tools can speed up everyday work and remove repetitive tasks."],["Technical writing","Turning what I learn into clear documentation, tutorials and explanations."],["Digital product development","Shaping ideas into usable products, from the first question to a working prototype."],["Agricultural technology","Applying field experience to digital tools that could help farmers decide better."]];
+const SKILLS={"Programming":["Python","HTML","CSS","JavaScript"],"Development":["Git","GitHub","Responsive web development","Frontend fundamentals"],"Technology":["Computer fundamentals","Networking fundamentals","Troubleshooting"],"AI & automation":["AI-assisted workflows","AI tools","Automation exploration"],"Technical communication":["Documentation","Tutorials","Research","Technical explanations"],"Agriculture":["Agricultural extension","Crop production","Livestock management","Field data collection","GPS tools"]};
+const CATS=["Technology explainers","Software tutorials","IT and networking","AI and automation","Agricultural technology","Learning in public"];
+/* Sample placeholders only. Set sample:false and add real date/readTime/body when you publish. */
+const ARTICLES=[{id:"sample-1",title:"Sample: what I learned building my first site",cat:"Learning in public",date:"Add date",read:"— min",excerpt:"Placeholder excerpt. Replace with your own summary.",body:["This is a sample layout. Replace it with your own article text."],sample:true},{id:"sample-2",title:"Sample: networking basics, explained simply",cat:"IT and networking",date:"Add date",read:"— min",excerpt:"Placeholder excerpt. Replace with your own summary.",body:["This is a sample layout. Replace it with your own article text."],sample:true}];
+/* ================================== */
+const $=(s,r=document)=>r.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#yr").textContent=new Date().getFullYear();
+$("#em").textContent=SITE.email;$("#em").href="mailto:"+SITE.email;
+$("#pg").innerHTML=PROJECTS.map(p=>`<button class="pc" data-id="${p.id}" aria-label="View project: ${esc(p.title)}"><div class="pv">Screenshot placeholder — replace</div><div class="pb"><span class="tag st">${p.status}</span> <span class="mono">${esc(p.cat)}</span><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><span class="mono"><b>View project</b> →</span></div></button>`).join("");
+$("#ar").innerHTML=AREAS.map(a=>`<div><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join("");
+$("#tk").innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div><h3>${k}</h3><ul>${v.map(s=>`<li>${s}</li>`).join("")}</ul></div>`).join("");
+let cat="All";
+function arts(){const L=ARTICLES.filter(a=>cat==="All"||a.cat===cat);
+$("#ct").innerHTML=["All",...CATS].map(c=>`<button aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join("");
+$("#al").innerHTML=L.length?L.map(a=>`<button class="ac" data-a="${a.id}"><span class="mono">${a.sample?"SAMPLE · ":""}${esc(a.cat)}</span><h3>${esc(a.title)}</h3><p>${esc(a.excerpt)}</p><span class="mono">${a.date} · ${a.read} read — <b>Read article</b></span></button>`).join(""):`<div class="empty"><h3>Nothing in this category yet.</h3><p>Articles will appear here once published. Try another category.</p></div>`}
+arts();
+$("#ct").onclick=e=>{const c=e.target.dataset.c;if(c){cat=c;arts()}};
+const dl=$("#dl"),dc=$("#dc");
+function open(html,hash){dc.innerHTML=html;if(!dl.open)dl.showModal();dl.scrollTop=0;if(hash&&location.hash!==hash)history.pushState(null,"",hash)}
+function closeD(){if(dl.open)dl.close()}
+dl.addEventListener("close",()=>{if(/^#(p|a)-/.test(location.hash))history.pushState(null,"","#"+(dl.dataset.s||"work"))});
+dc.addEventListener("click",e=>{if(e.target.closest(".x"))closeD()});
+dl.addEventListener("click",e=>{if(e.target===dl)closeD()});
+const closeBtn=`<button class="x" aria-label="Close">✕</button>`;
+function proj(id){const p=PROJECTS.find(x=>x.id===id);if(!p)return nf();dl.dataset.s="work";
+const sec=t=>`<h4>${t}</h4><p class="ph">${SITE.tbd}</p>`;
+open(`<div class="dh"><div><span class="tag st">${p.status}</span> <span class="mono">${esc(p.cat)}</span><h2 id="dt" style="margin:12px 0 0">${esc(p.title)}</h2></div>${closeBtn}</div><div class="db"><p>${esc(p.desc)}</p>${["Background","Problem or opportunity","Objective","My role","Approach","Tools and technologies","Development process"].map(sec).join("")}<h4>Screenshots</h4><div class="shots"><div>Screenshot placeholder<br>replace with real image</div><div>Screenshot placeholder<br>replace with real image</div></div>${["Challenges and lessons","Outcome and current status"].map(sec).join("")}<h4>Links</h4><p>${p.live?`<a href="${p.live}" target="_blank" rel="noopener">Live project</a> `:`<span class="ph">No live link yet.</span> `}${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener">GitHub repository</a>`:`<span class="ph">No repository link yet.</span>`}</p></div>`,"#p-"+id);
+document.title=p.title+" — Wanangwa Mlauzi"}
+function art(id){const a=ARTICLES.find(x=>x.id===id);if(!a)return nf();dl.dataset.s="writing";
+open(`<div class="dh"><div><span class="mono">${a.sample?"SAMPLE PLACEHOLDER · ":""}${esc(a.cat)} · ${a.date} · ${a.read}</span><h2 id="dt" style="margin:12px 0 0">${esc(a.title)}</h2></div>${closeBtn}</div><div class="db read">${a.body.map(t=>`<p style="margin-bottom:1em">${esc(t)}</p>`).join("")}</div>`,"#a-"+id)}
+function nf(){open(`<div class="dh"><span></span>${closeBtn}</div><div class="db nf"><h2 id="dt">404</h2><p>That page doesn’t exist.</p><a class="btn p" href="#home" style="color:var(--ink)">Back to home</a></div>`)}
+$("#pg").onclick=e=>{const b=e.target.closest(".pc");if(b)proj(b.dataset.id)};
+$("#al").onclick=e=>{const b=e.target.closest(".ac");if(b)art(b.dataset.a)};
+function route(){const h=location.hash;let m;if(m=h.match(/^#p-(.+)/))proj(m[1]);else if(m=h.match(/^#a-(.+)/))art(m[1]);else if(h==="#404")nf();else{closeD();document.title="Wanangwa Mlauzi — Technology Generalist, Malawi"}}
+addEventListener("hashchange",route);route();
+/* nav */
+const bg=$("#bg"),lk=$("#lk");
+bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
+lk.onclick=e=>{if(e.target.tagName==="A"){lk.classList.remove("open");bg.setAttribute("aria-expanded","false")}};
+addEventListener("keydown",e=>{if(e.key==="Escape"){lk.classList.remove("open");bg.setAttribute("aria-expanded","false")}});
+/* back to top + reveal */
+const tp=$("#tp");addEventListener("scroll",()=>tp.classList.toggle("on",scrollY>700),{passive:true});
+tp.onclick=()=>scrollTo({top:0});
+if("IntersectionObserver"in window){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.08});document.querySelectorAll(".rv").forEach(n=>io.observe(n))}else document.querySelectorAll(".rv").forEach(n=>n.classList.add("in"));
+/* form */
+const f=$("#f"),fs=$("#fs");
+f.addEventListener("submit",e=>{e.preventDefault();let ok=true;const d=Object.fromEntries(new FormData(f));
+const rules={name:v=>v.trim()?"":"Enter your name.",email:v=>/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)?"":"Enter a valid email address.",subject:v=>v.trim()?"":"Enter a subject.",message:v=>v.trim().length>=10?"":"Write at least 10 characters."};
+for(const k in rules){const m=rules[k](d[k]||"");$(`[data-for=${k}]`).textContent=m;f.elements[k].setAttribute("aria-invalid",!!m);if(m)ok=false}
+if(!ok){fs.textContent="Fix the highlighted fields and try again.";fs.style.color="#ff9d9d";return}
+fs.style.color="var(--lime)";fs.textContent="Your email app should open now. Nothing is sent until you press send there.";
+location.href=`mailto:${SITE.email}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(d.message+"\n\n— "+d.name+" ("+d.email+")")}`});
+</script>
+</body>
+</html>
