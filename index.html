@@ -3,10 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<<<<<<< HEAD
 <title>Wanangwa Mlauzi | Web Developer & Technical Writer</title>
 <meta name="description" content="Wanangwa Mlauzi is an emerging web developer and technical writer in Malawi, building digital experiences and creating clear technical content.">
 <meta property="og:title" content="Wanangwa Mlauzi | Web Developer & Technical Writer">
 <meta property="og:description" content="Wanangwa Mlauzi is an emerging web developer and technical writer in Malawi, creating responsive websites and clear technical content.">
+=======
+<title>Wanangwa Mlauzi — Technology Generalist, Malawi</title>
+<meta name="description" content="Portfolio of Wanangwa Mlauzi, a technology generalist in Malawi working across software, AgriTech and digital products.">
+<meta property="og:title" content="Wanangwa Mlauzi — Technology. Ideas. Real-world solutions.">
+<meta property="og:description" content="Technology generalist with a background in agriculture and a growing foundation in computer science.">
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -51,14 +58,41 @@ h1 span{display:block;background:linear-gradient(transparent 62%,var(--lime) 62%
 .btn{display:inline-block;padding:14px 22px;font:500 15px var(--b);text-decoration:none;border:1.5px solid var(--fg);cursor:pointer;background:none;color:var(--fg);transition:transform .2s,background .2s}
 .btn.p{background:var(--lime);color:var(--ink);border-color:var(--ink)}
 .btn:hover{transform:translate(-3px,-3px);box-shadow:3px 3px 0 var(--fg)}
+<<<<<<< HEAD
 .hero-portrait{position:relative;width:min(100%, 490px);margin:0 auto;border:1px solid rgba(199,243,107,.8);border-radius:22px;background:var(--card);overflow:hidden;box-shadow:0 0 0 1px rgba(199,243,107,.18),0 20px 40px rgba(23,25,31,.08);aspect-ratio:4/5}
 .hero-portrait::before{content:"";position:absolute;inset:12px;border:1px solid rgba(199,243,107,.38);border-radius:16px;pointer-events:none}
 .hero-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.02) contrast(1.02)}
 @media(max-width:900px){.hero-portrait{max-width:420px}}
+=======
+.art{position:relative;aspect-ratio:4/5;border:1px solid var(--line);background:var(--card);overflow:hidden}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .note{position:absolute;font:11px var(--m);color:var(--mute);background:var(--bg);padding:2px 6px}
+.art .spin{transform-origin:200px 250px;animation:sp 40s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.port {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 34%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 2px solid var(--lime);
+  background: var(--card);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 /* headings */
 h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
 .sub{max-width:560px;color:var(--mute);margin:0 0 48px}
 /* intro */
+<<<<<<< HEAD
 .grid3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .grid3>div{padding:28px;border:1px solid var(--line);background:var(--card)}
 .grid3 .cap-icon{width:42px;height:42px;padding:9px;color:var(--ink);background:var(--lime)}
@@ -78,11 +112,28 @@ h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
 .pb .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-bottom:8px}
 .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .stack span{display:inline-block;border:1px solid var(--line);padding:3px 7px;font:11px var(--m);color:var(--fg)}
+=======
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.grid3>div{padding:28px 24px 32px 0;border-right:1px solid var(--line)}
+.grid3>div:nth-child(2){padding-left:24px;margin-top:40px}.grid3>div:nth-child(3){padding-left:24px;margin-top:80px;border-right:0}
+.grid3 h3{font-size:22px;margin:10px 0}
+@media(max-width:800px){.grid3{grid-template-columns:1fr}.grid3>div,.grid3>div:nth-child(n){margin:0;padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}}
+/* work */
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.pc{grid-column:span 3;border:1px solid var(--line);background:var(--card);cursor:pointer;text-align:left;padding:0;color:inherit;font:inherit;transition:transform .25s}
+.pc:nth-child(1),.pc:nth-child(4){grid-column:span 4}.pc:nth-child(2),.pc:nth-child(3){grid-column:span 2}
+.pc:nth-child(4){grid-column:span 6}
+.pc:hover{transform:translateY(-4px)}.pc:hover .pv{background:var(--lime)}
+.pv{height:210px;border-bottom:1px solid var(--line);background:var(--dark);color:var(--dm);display:grid;place-items:center;font:11px var(--m);transition:background .25s;background-image:repeating-linear-gradient(45deg,transparent 0 12px,rgba(255,255,255,.05) 12px 13px)}
+.pc:hover .pv{color:var(--ink)}
+.pb{padding:20px 22px 24px}.pb h3{font-size:26px;margin:6px 0 8px}.pb p{margin:0 0 16px;font-size:15px;color:var(--mute)}
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 .tag{display:inline-block;border:1px solid var(--fg);padding:2px 8px;font:11px var(--m)}
 .st{background:var(--lime);color:var(--ink);border-color:var(--ink)}
 @media(max-width:800px){.projects{grid-template-columns:1fr}.pc:nth-child(n){grid-column:auto}}
 /* dark band */
 .dark{background:var(--dark);color:var(--darkfg)}.dark .sub,.dark .eyebrow{color:var(--dm)}
+<<<<<<< HEAD
 .areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .area-card{padding:28px;border:1px solid rgba(244,240,232,.2);background:rgba(255,255,255,.025);transition:background .2s,border-color .2s}
 .area-card:hover{background:rgba(199,243,107,.08);border-color:var(--lime)}
@@ -92,6 +143,12 @@ h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
 .area-card.supporting{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:20px;padding:22px 28px}
 .area-card.supporting h3{margin:0 0 6px}
 @media(max-width:800px){.areas{grid-template-columns:1fr}.area-card.supporting{grid-column:auto}}
+=======
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(244,240,232,.2);border-left:1px solid rgba(244,240,232,.2)}
+.areas div{padding:28px;border-right:1px solid rgba(244,240,232,.2);border-bottom:1px solid rgba(244,240,232,.2);transition:background .2s,color .2s}
+.areas div:hover{background:var(--lime);color:var(--ink)}.areas h3{font-size:21px;margin-bottom:8px}.areas p{margin:0;font-size:15px;opacity:.85}
+@media(max-width:800px){.areas{grid-template-columns:1fr}}
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 .tk{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 28px}
 .tk h3{font-size:18px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:14px}
 .tk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.tk li{border:1px solid var(--line);padding:4px 10px;font:12px var(--m)}
@@ -104,9 +161,14 @@ h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
 .ph{color:var(--mute);font-style:italic}
 /* writing */
 .arts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+<<<<<<< HEAD
 .ac{border:1px dashed var(--mute);padding:22px;display:flex;flex-direction:column;gap:10px;background:none;text-align:left;color:inherit;font:inherit;cursor:pointer;transition:border-color .2s, transform .2s, background .2s}
 .ac:hover{border-style:solid;background:var(--card);transform:translateY(-2px)}.ac h3{font-size:21px}.ac p{margin:0;color:var(--mute);font-size:15px}
 .ac .meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+=======
+.ac{border:1px dashed var(--mute);padding:22px;display:flex;flex-direction:column;gap:10px;background:none;text-align:left;color:inherit;font:inherit;cursor:pointer}
+.ac:hover{border-style:solid;background:var(--card)}.ac h3{font-size:21px}.ac p{margin:0;color:var(--mute);font-size:15px}
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .cats button{background:none;border:1px solid var(--line);color:inherit;padding:5px 12px;font:12px var(--m);cursor:pointer}.cats button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
 .empty{grid-column:1/-1;border:1px solid var(--line);padding:28px}
@@ -115,11 +177,14 @@ h2{font-size:clamp(34px,5vw,64px);margin-bottom:20px}
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:64px}
 @media(max-width:900px){.contact{grid-template-columns:1fr;gap:36px}}
 .dark a{text-decoration-color:var(--lime);text-underline-offset:4px}
+<<<<<<< HEAD
 .social-links{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
 .social-links a{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 12px;border:1px solid rgba(244,240,232,.28);text-decoration:none;font:12px var(--m);transition:background .2s,color .2s,border-color .2s}
 .social-links a:hover{background:var(--lime);color:var(--ink);border-color:var(--lime)}
 .social-links svg{width:17px;height:17px;flex:none;fill:currentColor}
 .social-links .linkedin-icon{fill:none;stroke:currentColor;stroke-width:1.8}
+=======
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 form{display:grid;gap:16px}label{display:grid;gap:6px;font:12px var(--m)}
 input,textarea{font:16px var(--b);padding:12px;background:transparent;color:inherit;border:1px solid rgba(244,240,232,.4);border-radius:0;width:100%}
 input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff8f8f}.err{color:#ff9d9d;min-height:1em;font:12px var(--m)}
@@ -147,14 +212,21 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="w"><nav aria-label="Primary">
 <a class="logo" href="#home">Wanangwa Mlauzi</a>
+<<<<<<< HEAD
 <div class="avail"><i class="dot"></i>Open to internships &amp; freelance work</div>
 <button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
 <div class="links" id="lk"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#development">DEVELOPMENT</a><a href="#writing">WRITING</a><a href="#contact">CONTACT</a></div>
+=======
+<div class="avail"><i class="dot"></i>Open to opportunities</div>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
+<div class="links" id="lk"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#work">WORK</a><a href="#writing">WRITING</a><a href="#contact">CONTACT</a></div>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 </nav></div></header>
 
 <main id="main">
 <section id="home"><div class="w hero">
 <div>
+<<<<<<< HEAD
 <p class="mono eyebrow">WEB DEVELOPER &amp; TECHNICAL WRITER · MALAWI</p>
 <h1>I build for the web.<span>I write to make technology clear.</span></h1>
 <p class="lede">I’m Wanangwa Mlauzi, an emerging web developer and technical writer currently studying Computer Science. I build responsive digital experiences and create clear technical content that makes technology easier to understand and use, supported by a growing foundation in IT support.</p>
@@ -179,31 +251,92 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 <section id="development"><div class="w rv">
 <h2>My Work.</h2>
 <p class="sub">Live business websites built for clients.</p>
+=======
+<p class="mono eyebrow">INDEPENDENT TECHNOLOGY ENTHUSIAST · MALAWI</p>
+<h1>Exploring technology.<span>Building things that matter.</span></h1>
+<p class="lede">I’m Wanangwa Mlauzi — a technology generalist interested in software, digital innovation and solving real-world problems through technology.</p>
+<div class="cta"><a class="btn p" href="#work">Explore my work</a><a class="btn" href="#contact">Let’s connect</a></div>
+<p class="mono">OPEN TO INTERNSHIPS, ENTRY-LEVEL ROLES &amp; COLLABORATIONS</p>
+</div>
+<div>
+<div class="art" role="img" aria-label="Creative digital illustration combining technology, innovation and connected systems">
+<svg viewBox="0 0 400 500" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+<g opacity=".25"><path d="M0 100h400M0 200h400M0 300h400M0 400h400M100 0v500M200 0v500M300 0v500"/></g>
+<g class="spin"><circle cx="200" cy="250" r="120"/><circle cx="200" cy="250" r="80" stroke-dasharray="4 6"/></g>
+<circle cx="200" cy="250" r="46" fill="#C7F36B" stroke="#17191F" stroke-width="1.5"/>
+<path d="M200 250 L320 130 H400" stroke-width="1.5"/><path d="M200 250 L80 380 H0" stroke-width="1.5"/>
+<path d="M30 60c60 40 120 40 180 0s120-40 160 0" stroke-width="1.5" opacity=".6"/>
+</svg>
+<span class="note" style="top:12px;left:12px">fig.01 — field × code</span>
+<span class="note" style="top:96px;right:12px">input: soil, sensors, people</span>
+<span class="note" style="bottom:14px;left:12px">output: useful things</span>
+<div class="port">
+  <img
+    src="assets/images/Profile-image.png"
+    alt="Wanangwa Mlauzi"
+    class="profile-img"
+  >
+</div>
+
+<p class="mono eyebrow" style="margin-top:12px">BASED IN MALAWI · OPEN TO GLOBAL OPPORTUNITIES</p>
+</div></div></section>
+
+<section id="intro" style="border-top:1px solid var(--line)"><div class="w rv">
+<h2>A little about what I do.</h2>
+<p class="sub">Three interests that feed each other.</p>
+<div class="grid3">
+<div><span class="mono">01</span><h3>Technology</h3><p>Exploring software, IT systems, emerging technologies and digital tools.</p></div>
+<div><span class="mono">02</span><h3>Building</h3><p>Turning ideas into practical websites, digital products and useful solutions.</p></div>
+<div><span class="mono">03</span><h3>Agriculture + innovation</h3><p>Combining agricultural knowledge with technology to explore better ways of addressing real-world challenges.</p></div>
+</div></div></section>
+
+<section id="work"><div class="w rv">
+<h2>Selected work.</h2>
+<p class="sub">Experiments, projects and ideas shaped by curiosity and practical problem-solving.</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 <div class="projects" id="pg"></div>
 </div></section>
 
 <section class="dark" id="explore"><div class="w rv">
+<<<<<<< HEAD
 <h2>Technical capabilities.</h2>
 <p class="sub">Web Development and Technical Writing are my primary focus areas, supported by IT Support knowledge.</p>
+=======
+<h2>Areas of interest.</h2>
+<p class="sub">Interests and developing capabilities — not claims of expert-level proficiency.</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 <div class="areas" id="ar"></div>
 </div></section>
 
 <section id="toolkit"><div class="w rv">
+<<<<<<< HEAD
 <h2>Techn stack.</h2>
 <p class="sub">A practical stack for creating websites and documentation.</p>
+=======
+<h2>My toolkit.</h2>
+<p class="sub">Grouped by what I use it for. This list grows as I learn.</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 <div class="tk" id="tk"></div>
 </div></section>
 
 <section id="about" class="dark"><div class="w rv about">
 <div>
+<<<<<<< HEAD
 <h2>Web Developer | Technical Writer | Computer Science Student</h2>
 <p>I'm a Computer Science student and aspiring technology professional focused on building practical digital solutions and making technology easier to understand and use. My interests lie at the intersection of web development, software documentation and technical problem-solving.</p>
 <p>My approach goes beyond writing code. I'm interested in understanding how digital products work, how people interact with them, and how technical knowledge can be communicated effectively. Through hands-on projects, I'm developing experience in web development, technical documentation, version control, deployment and IT support.</p>
 <p>I'm particularly interested in opportunities where I can contribute to software development, create clear and useful technical documentation, and solve real-world technology challenges. I'm open to internships, entry-level opportunities and freelance collaborations that allow me to contribute, learn and grow as a technology professional.</p>
+=======
+<h2>An unconventional path into technology.</h2>
+<p>I hold a Diploma in Agriculture and I’m now pursuing Computer Science studies. My agricultural background includes practical field exposure, extension activities, farmer engagement, data collection and agricultural training.</p>
+<p>The move into technology came from wanting to understand how digital tools can improve systems, businesses and everyday problem-solving. I’m most interested where software, technology, entrepreneurship and agriculture meet.</p>
+<p>I learn best by building: practical projects, experiments and useful things. Next, I’m looking for internships, entry-level roles and collaborations where I can keep doing that alongside people who know more than I do.</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 </div>
 <div>
 <p class="mono" style="color:var(--dm)">EDUCATION</p>
 <ul class="tl">
+<<<<<<< HEAD
 <li><b>Computer Science (in progress)</b><br><span class="ph">DMI St John the baptist University</span> · <span class="ph">2025 - present</span></li>
 </ul>
 <a class="btn p" style="color:var(--ink)" href="#contact">Request my CV</a>
@@ -213,6 +346,18 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 <section id="writing"><div class="w rv">
 <h2>Technical writing.</h2>
 <p class="sub">Clear documentation, practical explainers and technical guidance in progress.</p>
+=======
+<li><b>Diploma in Agriculture</b><br><span class="ph">[Mwimba College of Agriculture]</span> · <span class="ph">[2018 — 2022]</span></li>
+<li><b>Computer Science (in progress)</b><br><span class="ph">[DMI St John the baptist University]</span> · <span class="ph">[2028]</span></li>
+</ul>
+<a class="btn p" style="color:var(--ink)" href="assets/wanangwa-mlauzi-cv.pdf" download>Download CV</a>
+<p class="mono" style="color:var(--dm);margin-top:10px">Replace assets/wanangwa-mlauzi-cv.pdf with your CV.</p>
+</div></div></section>
+
+<section id="writing"><div class="w rv">
+<h2>Thinking out loud.</h2>
+<p class="sub">Notes on technology, building and learning. Nothing here is published yet — the cards below are layout samples.</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 <div class="cats" id="ct" role="group" aria-label="Filter articles"></div>
 <div class="arts" id="al"></div>
 </div></section>
@@ -220,6 +365,7 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 <section id="contact" class="dark"><div class="w rv contact">
 <div>
 <h2>Have an idea? Let’s talk.</h2>
+<<<<<<< HEAD
 <p>I’m open to opportunities and collaborations.</p>
 <div class="social-links" aria-label="Contact and social profiles">
 <a id="em" href="mailto:wbmlauzi@gmail.com" aria-label="Email Wanangwa Mlauzi at wbmlauzi@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Zm0 2v.3l9 6.1 9-6.1v-.3H3Zm18 9.1v-6.4l-8.4 5.7a1 1 0 0 1-1.2 0L3 10.2v6.4h18Z"/></svg>wbmlauzi@gmail.com</a>
@@ -228,6 +374,10 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 <a href="https://www.linkedin.com/in/REPLACE-WITH-VERIFIED-PROFILE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile URL placeholder; replace with verified profile URL"><svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9v10M4.5 5.5v.1M9.5 19V9h4v1.5c.6-1.1 1.6-1.8 3.2-1.8 2.7 0 3.8 1.7 3.8 4.8V19m-7-5.4V19"/></svg>LinkedIn · add profile URL</a>
 </div>
 <p class="mono">LOCATION &nbsp;Malawi<br>OPEN TO &nbsp;Internships, freelance projects, remote collaborations</p>
+=======
+<p>I’m interested in meaningful opportunities, collaborations and conversations around technology, software and innovation.</p>
+<p class="mono">EMAIL &nbsp;<a id="em" href="#">your.email@example.com</a><br>LINKEDIN &nbsp;<a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a><br>GITHUB &nbsp;<a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a><br>LOCATION &nbsp;Malawi<br>OPEN TO &nbsp;Internships, employment, freelance projects, collaborations</p>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 </div>
 <form id="f" novalidate aria-describedby="fs">
 <label>Name<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
@@ -242,15 +392,22 @@ dialog::backdrop{background:rgba(10,11,14,.7)}
 </main>
 
 <footer><div class="w fg">
+<<<<<<< HEAD
 <div><div class="big">Wanangwa Mlauzi</div><p style="max-width:40ch;color:var(--dm)">Web developer and technical writer based in Malawi, building practical digital solutions and clear technical content.</p><p class="mono" style="color:var(--dm)">Designed with curiosity. Built with intention.<br>© <span id="yr"></span> Wanangwa Mlauzi</p></div>
 <div><a href="#home">Home</a><a href="#about">About</a><a href="#development">Development</a><a href="#writing">Writing</a><a href="#contact">Contact</a></div>
 <div><a href="mailto:wbmlauzi@gmail.com">Email</a><a href="https://github.com/wmlauzi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://x.com/wlauzi" target="_blank" rel="noopener noreferrer">X / Twitter</a><a href="https://www.linkedin.com/in/REPLACE-WITH-VERIFIED-PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn · update profile URL</a></div>
+=======
+<div><div class="big">Wanangwa Mlauzi</div><p style="max-width:40ch;color:var(--dm)">Technology generalist in Malawi, building credibility through practical work.</p><p class="mono" style="color:var(--dm)">Designed with curiosity. Built with intention.<br>© <span id="yr"></span> Wanangwa Mlauzi</p></div>
+<div><a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#writing">Writing</a><a href="#contact">Contact</a></div>
+<div><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a></div>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 </div></footer>
 <button class="top" id="tp" aria-label="Back to top">↑</button>
 <dialog id="dl" aria-labelledby="dt"><div id="dc"></div></dialog>
 
 <script>
 /* ===== EDIT YOUR CONTENT HERE ===== */
+<<<<<<< HEAD
 const SITE={email:"wbmlauzi@gmail.com",tbd:"Add your own text here."};
 const PROJECTS=[
 {id:"keso-cleaning-services",title:"KESO Cleaning Services",business:"KESO",status:"Live website",url:"https://kesomw.vercel.app/",desc:"A responsive business website developed for KESO Services, showcasing its cleaning, catering and event decoration services. The platform provides customers with an accessible way to explore services, learn about the business and make booking enquiries directly through WhatsApp."},
@@ -269,6 +426,25 @@ $("#yr").textContent=new Date().getFullYear();
 $("#em").href="mailto:"+SITE.email;
 $("#pg").innerHTML=PROJECTS.map(p=>`<article class="pc"><div class="pv"><iframe src="${p.url}" title="Live website preview: ${esc(p.title)}" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div><div class="pb"><div class="meta"><span class="tag st">${esc(p.status)}</span> <span class="mono">${esc(p.business)}</span></div><h3><a href="${p.url}" target="_blank" rel="noopener noreferrer">${esc(p.title)}</a></h3><p>${esc(p.desc)}</p><div class="project-actions"><a class="btn p" href="${p.url}" target="_blank" rel="noopener noreferrer">View Live Website ↗</a><button class="btn project-details" type="button" data-id="${p.id}">Project details</button></div></div></article>`).join("");
 $("#ar").innerHTML=AREAS.map((a,i)=>`<article class="area-card${i===2?" supporting":""}">${a.icon}<div><span class="mono">${a.label}</span><h3>${a.title}</h3><p>${a.description}</p></div></article>`).join("");
+=======
+const SITE={email:"your.email@example.com",tbd:"Add your own text here."};
+const PROJECTS=[
+{id:"farm-eye",title:"Farm Eye",cat:"Digital Agriculture / AgriTech",status:"Concept",desc:"A precision-agriculture concept exploring how digital tools can support farm monitoring and agricultural decision-making.",live:"",repo:""},
+{id:"agriease-malawi",title:"AgriEase Malawi",cat:"AgriTech / Startup Concept",status:"Concept",desc:"An asset-light agricultural equipment rental marketplace concept designed to connect farmers with equipment owners and improve access to mechanisation.",live:"",repo:""},
+{id:"keso-services",title:"Keso Services",cat:"Web Development / Client Project",status:"Completed",desc:"A responsive business website designed to present services professionally and generate customer enquiries.",live:"",repo:""},
+{id:"mizu-industrial",title:"Mizu Industrial",cat:"Branding / Business Technology",status:"In development",desc:"A branding and digital business development project for a biomass energy and cooking-stove venture.",live:"",repo:""}];
+const AREAS=[["Software & web development","Learning to build responsive websites and small applications, one project at a time."],["IT & networking","Building a foundation in how systems and networks fit together, and how to troubleshoot them."],["AI & automation","Exploring how AI tools can speed up everyday work and remove repetitive tasks."],["Technical writing","Turning what I learn into clear documentation, tutorials and explanations."],["Digital product development","Shaping ideas into usable products, from the first question to a working prototype."],["Agricultural technology","Applying field experience to digital tools that could help farmers decide better."]];
+const SKILLS={"Programming":["Python","HTML","CSS","JavaScript"],"Development":["Git","GitHub","Responsive web development","Frontend fundamentals"],"Technology":["Computer fundamentals","Networking fundamentals","Troubleshooting"],"AI & automation":["AI-assisted workflows","AI tools","Automation exploration"],"Technical communication":["Documentation","Tutorials","Research","Technical explanations"],"Agriculture":["Agricultural extension","Crop production","Livestock management","Field data collection","GPS tools"]};
+const CATS=["Technology explainers","Software tutorials","IT and networking","AI and automation","Agricultural technology","Learning in public"];
+/* Sample placeholders only. Set sample:false and add real date/readTime/body when you publish. */
+const ARTICLES=[{id:"sample-1",title:"Sample: what I learned building my first site",cat:"Learning in public",date:"Add date",read:"— min",excerpt:"Placeholder excerpt. Replace with your own summary.",body:["This is a sample layout. Replace it with your own article text."],sample:true},{id:"sample-2",title:"Sample: networking basics, explained simply",cat:"IT and networking",date:"Add date",read:"— min",excerpt:"Placeholder excerpt. Replace with your own summary.",body:["This is a sample layout. Replace it with your own article text."],sample:true}];
+/* ================================== */
+const $=(s,r=document)=>r.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#yr").textContent=new Date().getFullYear();
+$("#em").textContent=SITE.email;$("#em").href="mailto:"+SITE.email;
+$("#pg").innerHTML=PROJECTS.map(p=>`<button class="pc" data-id="${p.id}" aria-label="View project: ${esc(p.title)}"><div class="pv">Screenshot placeholder — replace</div><div class="pb"><span class="tag st">${p.status}</span> <span class="mono">${esc(p.cat)}</span><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p><span class="mono"><b>View project</b> →</span></div></button>`).join("");
+$("#ar").innerHTML=AREAS.map(a=>`<div><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join("");
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 $("#tk").innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div><h3>${k}</h3><ul>${v.map(s=>`<li>${s}</li>`).join("")}</ul></div>`).join("");
 let cat="All";
 function arts(){const L=ARTICLES.filter(a=>cat==="All"||a.cat===cat);
@@ -279,20 +455,37 @@ $("#ct").onclick=e=>{const c=e.target.dataset.c;if(c){cat=c;arts()}};
 const dl=$("#dl"),dc=$("#dc");
 function open(html,hash){dc.innerHTML=html;if(!dl.open)dl.showModal();dl.scrollTop=0;if(hash&&location.hash!==hash)history.pushState(null,"",hash)}
 function closeD(){if(dl.open)dl.close()}
+<<<<<<< HEAD
 dl.addEventListener("close",()=>{if(/^#(p|a)-/.test(location.hash))history.pushState(null,"","#"+(dl.dataset.s||"development"))});
 dc.addEventListener("click",e=>{if(e.target.closest(".x"))closeD()});
 dl.addEventListener("click",e=>{if(e.target===dl)closeD()});
 const closeBtn=`<button class="x" aria-label="Close">✕</button>`;
 function proj(id){const p=PROJECTS.find(x=>x.id===id);if(!p)return nf();dl.dataset.s="development";
 open(`<div class="dh"><div><span class="tag st">${esc(p.status)}</span><h2 id="dt" style="margin:12px 0 0">${esc(p.title)}</h2></div>${closeBtn}</div><div class="db"><p>${esc(p.desc)}</p><h4>Business</h4><p>${esc(p.business)}</p><p style="margin-top:24px"><a class="btn p" href="${p.url}" target="_blank" rel="noopener noreferrer">View Live Website ↗</a></p></div>`,"#p-"+id);
+=======
+dl.addEventListener("close",()=>{if(/^#(p|a)-/.test(location.hash))history.pushState(null,"","#"+(dl.dataset.s||"work"))});
+dc.addEventListener("click",e=>{if(e.target.closest(".x"))closeD()});
+dl.addEventListener("click",e=>{if(e.target===dl)closeD()});
+const closeBtn=`<button class="x" aria-label="Close">✕</button>`;
+function proj(id){const p=PROJECTS.find(x=>x.id===id);if(!p)return nf();dl.dataset.s="work";
+const sec=t=>`<h4>${t}</h4><p class="ph">${SITE.tbd}</p>`;
+open(`<div class="dh"><div><span class="tag st">${p.status}</span> <span class="mono">${esc(p.cat)}</span><h2 id="dt" style="margin:12px 0 0">${esc(p.title)}</h2></div>${closeBtn}</div><div class="db"><p>${esc(p.desc)}</p>${["Background","Problem or opportunity","Objective","My role","Approach","Tools and technologies","Development process"].map(sec).join("")}<h4>Screenshots</h4><div class="shots"><div>Screenshot placeholder<br>replace with real image</div><div>Screenshot placeholder<br>replace with real image</div></div>${["Challenges and lessons","Outcome and current status"].map(sec).join("")}<h4>Links</h4><p>${p.live?`<a href="${p.live}" target="_blank" rel="noopener">Live project</a> `:`<span class="ph">No live link yet.</span> `}${p.repo?`<a href="${p.repo}" target="_blank" rel="noopener">GitHub repository</a>`:`<span class="ph">No repository link yet.</span>`}</p></div>`,"#p-"+id);
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 document.title=p.title+" — Wanangwa Mlauzi"}
 function art(id){const a=ARTICLES.find(x=>x.id===id);if(!a)return nf();dl.dataset.s="writing";
 open(`<div class="dh"><div><span class="mono">${a.sample?"SAMPLE PLACEHOLDER · ":""}${esc(a.cat)} · ${a.date} · ${a.read}</span><h2 id="dt" style="margin:12px 0 0">${esc(a.title)}</h2></div>${closeBtn}</div><div class="db read">${a.body.map(t=>`<p style="margin-bottom:1em">${esc(t)}</p>`).join("")}</div>`,"#a-"+id)}
 function nf(){open(`<div class="dh"><span></span>${closeBtn}</div><div class="db nf"><h2 id="dt">404</h2><p>That page doesn’t exist.</p><a class="btn p" href="#home" style="color:var(--ink)">Back to home</a></div>`)}
+<<<<<<< HEAD
 $("#pg").onclick=e=>{const b=e.target.closest(".project-details");if(b)proj(b.dataset.id)};
 $("#al").onclick=e=>{const b=e.target.closest(".ac");if(b)art(b.dataset.a)};
 function route(){const h=location.hash;let m;if(m=h.match(/^#p-(.+)/))proj(m[1]);else if(m=h.match(/^#a-(.+)/))art(m[1]);else if(h==="#404")nf();else{closeD();document.title="Wanangwa Mlauzi — Web Developer & Technical Writer"}
 }addEventListener("hashchange",route);route();
+=======
+$("#pg").onclick=e=>{const b=e.target.closest(".pc");if(b)proj(b.dataset.id)};
+$("#al").onclick=e=>{const b=e.target.closest(".ac");if(b)art(b.dataset.a)};
+function route(){const h=location.hash;let m;if(m=h.match(/^#p-(.+)/))proj(m[1]);else if(m=h.match(/^#a-(.+)/))art(m[1]);else if(h==="#404")nf();else{closeD();document.title="Wanangwa Mlauzi — Technology Generalist, Malawi"}}
+addEventListener("hashchange",route);route();
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
 /* nav */
 const bg=$("#bg"),lk=$("#lk");
 bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
@@ -312,4 +505,8 @@ fs.style.color="var(--lime)";fs.textContent="Your email app should open now. Not
 location.href=`mailto:${SITE.email}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(d.message+"\n\n— "+d.name+" ("+d.email+")")}`});
 </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 16f16652a0ce85c13c59b563d5ac33a2d3ebeeac
