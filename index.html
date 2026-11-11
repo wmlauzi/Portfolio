@@ -410,6 +410,15 @@
     #about h2 { max-width: 14ch; margin-bottom: 30px; font-size: clamp(40px, 6vw, 72px); }
     #about p:not(.mono) { max-width: 76ch; color: var(--paper); font-size: clamp(16px, 1.45vw, 18px); }
     #about p:not(.mono) + p:not(.mono) { margin-top: 22px; color: #d1cec6; }
+    #about .about-copy { max-width: 1040px; }
+    #about .about-eyebrow { margin: 0 0 16px; color: var(--mute); }
+    #about h2 { max-width: 16ch; margin-bottom: 34px; }
+    #about .about-paragraphs { display: grid; gap: 18px; }
+    #about .about-paragraphs p { max-width: 78ch; margin: 0; }
+    #about .about-paragraphs p + p { padding-top: 18px; border-top: 1px solid rgba(244, 240, 232, .18); }
+    .about-meta { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 36px 0 0; padding-top: 18px; border-top: 1px solid rgba(244, 240, 232, .28); }
+    .about-meta-item { display: inline-flex; align-items: center; gap: 9px; color: var(--darkmute); font: 10px/1.6 var(--mono); letter-spacing: .025em; text-transform: uppercase; }
+    .about-meta-item svg { width: 16px; height: 16px; flex: 0 0 16px; color: var(--lime); }
 
     #services { background: var(--paper); }
     #services h2, #development h2, #toolkit h2 { font-size: clamp(40px, 6vw, 72px); }
@@ -564,6 +573,10 @@
       .hero-social { margin-top: 20px; }
       #about h2 { font-size: clamp(38px, 11vw, 54px); }
       #about p:not(.mono) { font-size: 16px; }
+      #about .about-eyebrow { margin-bottom: 14px; }
+      #about h2 { margin-bottom: 26px; }
+      .about-meta { gap: 12px 20px; margin-top: 28px; }
+      .about-meta-item { font-size: 9px; }
       .two-cards, .toolkit { grid-template-columns: 1fr; }
       .two-cards { gap: 42px; }
       .info-card { padding-top: 20px; }
@@ -684,14 +697,28 @@
 
     <section class="dark-section" id="about" data-section-reveal>
       <div class="wrap about-copy">
-        <p class="mono eyebrow">ABOUT ME</p>
-        <h2>Websites and hands-on technical support.</h2>
-
-              <p>I'm Wanangwa Mlauzi, a Computer Science undergraduate developing practical experience in web development and IT support. I build responsive, user-friendly websites that help businesses showcase their services, establish an online presence and make it easier for customers to get in touch.</p>
-
-              <p>In IT support, I troubleshoot computer hardware and software issues, assist with Windows operating systems, and handle software installation and configuration. I approach technical requests by identifying the problem, investigating possible causes and providing practical solutions.</p>
-
-              <p>My practical experience includes developing and deploying two business websites, alongside hands-on technical practice. I continue to strengthen my skills through coursework, independent learning and practical projects. I'm open to website development projects, IT support requests, freelance collaborations, internships and entry-level opportunities.</p>
+        <p class="mono eyebrow about-eyebrow">ABOUT ME</p>
+        <h2>Building for the web. Solving technical problems.</h2>
+        <div class="about-paragraphs">
+          <p>I'm Wanangwa Mlauzi, a Computer Science undergraduate focused on web development and IT support. I build responsive, user-friendly websites that help businesses present their services, establish a professional online presence and connect with customers.</p>
+          <p>My IT support experience includes troubleshooting computer hardware and software issues, assisting with Windows operating systems, and handling software installation and configuration. I take a systematic approach to technical problems by identifying issues, investigating possible causes and implementing practical solutions.</p>
+          <p>I've developed and deployed two business websites and continue to build my technical capabilities through coursework, independent learning and hands-on projects.</p>
+        </div>
+        <ul class="about-meta" aria-label="Professional details">
+          <li class="about-meta-item">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 7.5 10 4l7 3.5-7 3.5-7-3.5ZM5 9v4.5c2.8 2.2 7.2 2.2 10 0V9M17 8v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Computer Science undergrad</span>
+          </li>
+          <li class="about-meta-item">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/>
+              <path d="m6.8 10.1 2.1 2.1 4.5-4.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Open to Opportunities</span>
+          </li>
+        </ul>
       </div>
     </section>
 
