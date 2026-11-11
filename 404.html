@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17191f">
+  <title>Page Not Found | Wanangwa Mlauzi</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17191f;
+      --paper: #f4f0e8;
+      --lime: #c7f36b;
+      --mute: #6b6e75;
+      --heading: "Space Grotesk", system-ui, sans-serif;
+      --body: Inter, system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid; min-height: 100vh; margin: 0; place-items: center;
+      padding: 24px; background: var(--paper); color: var(--ink);
+      font: 16px/1.7 var(--body);
+    }
+    main { width: min(100%, 720px); }
+    .eyebrow { color: var(--mute); font: 12px var(--mono); letter-spacing: .06em; }
+    h1 { margin: 14px 0; font: 700 clamp(46px, 10vw, 88px)/1 var(--heading); letter-spacing: -.05em; }
+    p { max-width: 46ch; color: var(--mute); }
+    a {
+      display: inline-flex; min-height: 48px; align-items: center; margin-top: 16px;
+      padding: 10px 16px; border: 1px solid var(--ink); background: var(--lime);
+      color: var(--ink); font: 12px var(--mono); text-decoration: none;
+      transition: box-shadow 220ms ease, transform 220ms ease;
+    }
+    a:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--ink); }
+    a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <p class="eyebrow">ERROR 404 · PAGE NOT FOUND</p>
+    <h1>This page<br>isn't here.</h1>
+    <p>The address may be incorrect, or the page may have moved. Return to the portfolio to continue exploring.</p>
+    <a href="/">Back to homepage</a>
+  </main>
+</body>
+</html>
