@@ -616,6 +616,41 @@
       .has-project-motion [data-project-reveal] .project-media { clip-path: none; transition: none; }
       .has-project-motion [data-project-reveal] .project-info > * { opacity: 1; transform: none; transition: none; }
     }
+    /* Fix homepage social icon visibility */
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.hero-social a {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  color: #17191f;
+  background: transparent;
+  border: 1px solid rgba(23, 25, 31, 0.35);
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-social svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #17191f;
+  overflow: visible;
+}
+
+.hero-social a:hover {
+  color: #17191f;
+  background: #c7f36b;
+  border-color: #c7f36b;
+}
   </style>
 </head>
 
