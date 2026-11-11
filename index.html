@@ -229,6 +229,7 @@
     .skill-list li { border: 1px solid var(--line); padding: 4px 9px; font: 11px var(--mono); }
     .about-copy { max-width: 760px; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-location { color: var(--darkmute); }
     form { display: grid; gap: 14px; }
     label { display: grid; gap: 6px; font: 12px var(--mono); }
     input, textarea { width: 100%; padding: 12px; color: inherit; background: transparent; border: 1px solid rgba(244,240,232,.4); }
@@ -413,6 +414,8 @@
     #about .about-copy { max-width: 1040px; }
     #about .about-eyebrow { margin: 0 0 16px; color: var(--mute); }
     #about h2 { max-width: 16ch; margin-bottom: 34px; }
+    #about .about-layout { display: grid; grid-template-columns: minmax(200px, .7fr) minmax(0, 1.5fr); align-items: start; gap: clamp(36px, 7vw, 88px); }
+    #about .about-portrait { display: block; width: min(100%, 300px); height: auto; border: 0; border-radius: 0; object-fit: contain; object-position: center; }
     #about .about-paragraphs { display: grid; gap: 18px; }
     #about .about-paragraphs p { max-width: 78ch; margin: 0; }
     #about .about-paragraphs p + p { padding-top: 18px; border-top: 1px solid rgba(244, 240, 232, .18); }
@@ -575,6 +578,8 @@
       #about p:not(.mono) { font-size: 16px; }
       #about .about-eyebrow { margin-bottom: 14px; }
       #about h2 { margin-bottom: 26px; }
+      #about .about-layout { grid-template-columns: 1fr; gap: 32px; }
+      #about .about-portrait { width: min(72%, 240px); margin-inline: auto; }
       .about-meta { gap: 12px 20px; margin-top: 28px; }
       .about-meta-item { font-size: 9px; }
       .two-cards, .toolkit { grid-template-columns: 1fr; }
@@ -734,6 +739,21 @@
     @media (prefers-reduced-motion: reduce) {
       .projects { scroll-behavior: auto; }
     }
+    .portrait-frame {
+      width: min(100%, 300px);
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .portrait-frame::after { border-radius: 50%; }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
   </style>
 </head>
 
@@ -815,28 +835,33 @@
 
     <section class="dark-section" id="about" data-section-reveal>
       <div class="wrap about-copy">
-        <p class="mono eyebrow about-eyebrow">ABOUT ME</p>
-        <h2>Building for the web. Solving technical problems.</h2>
-        <div class="about-paragraphs">
-          <p>I'm Wanangwa Mlauzi, a Computer Science undergraduate focused on web development and IT support. I build responsive, user-friendly websites that help businesses present their services, establish a professional online presence and connect with customers.</p>
-          <p>My IT support experience includes troubleshooting computer hardware and software issues, assisting with Windows operating systems, and handling software installation and configuration. I take a systematic approach to technical problems by identifying issues, investigating possible causes and implementing practical solutions.</p>
-          <p>I've developed and deployed two business websites and continue to build my technical capabilities through coursework, independent learning and hands-on projects.</p>
+        <div class="about-layout">
+          <img class="about-portrait" src="assets/images/Profile-image.png" alt="Portrait of Wanangwa Mlauzi">
+          <div class="about-content">
+            <p class="mono eyebrow about-eyebrow">ABOUT ME</p>
+            <h2>Building for the web. Solving technical problems.</h2>
+            <div class="about-paragraphs">
+              <p>I'm Wanangwa Mlauzi, a Computer Science undergraduate focused on web development and IT support. I build responsive, user-friendly websites that help businesses present their services, establish a professional online presence and connect with customers.</p>
+              <p>My IT support experience includes troubleshooting computer hardware and software issues, assisting with Windows operating systems, and handling software installation and configuration. I take a systematic approach to technical problems by identifying issues, investigating possible causes and implementing practical solutions.</p>
+              <p>I've developed and deployed two business websites and continue to build my technical capabilities through coursework, independent learning and hands-on projects.</p>
+            </div>
+            <ul class="about-meta" aria-label="Professional details">
+              <li class="about-meta-item">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M3 7.5 10 4l7 3.5-7 3.5-7-3.5ZM5 9v4.5c2.8 2.2 7.2 2.2 10 0V9M17 8v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Computer Science undergrad</span>
+              </li>
+              <li class="about-meta-item">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="m6.8 10.1 2.1 2.1 4.5-4.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Open to Opportunities</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul class="about-meta" aria-label="Professional details">
-          <li class="about-meta-item">
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M3 7.5 10 4l7 3.5-7 3.5-7-3.5ZM5 9v4.5c2.8 2.2 7.2 2.2 10 0V9M17 8v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Computer Science undergrad</span>
-          </li>
-          <li class="about-meta-item">
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/>
-              <path d="m6.8 10.1 2.1 2.1 4.5-4.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Open to Opportunities</span>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -1041,14 +1066,14 @@
             </button>
             <span class="copy-status" id="copyStatus" role="status" aria-live="polite"></span>
           </div>
-          <p class="mono" style="color:var(--darkmute)">LOCATION · MALAWI</p>
+          <p class="mono contact-location">LOCATION · MALAWI</p>
         </div>
         <form id="contactForm">
           <p class="form-note">Share a few details so I can understand your request.</p>
-          <label>Your name<input name="name" autocomplete="name" required></label>
-          <label>Your email<input name="email" type="email" autocomplete="email" required></label>
-          <label>Subject<input name="subject" autocomplete="off" placeholder="e.g. Website project enquiry" required></label>
-          <label>How can I help?<textarea name="message" rows="5" placeholder="Describe the project, issue, or opportunity." required></textarea></label>
+          <label>Your name<input name="name" autocomplete="name" maxlength="100" required></label>
+          <label>Your email<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+          <label>Subject<input name="subject" autocomplete="off" maxlength="150" placeholder="e.g. Website project enquiry" required></label>
+          <label>How can I help?<textarea name="message" rows="5" maxlength="5000" placeholder="Describe the project, issue, or opportunity." required></textarea></label>
           <button class="button primary" type="submit">Get in Touch</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           <p class="form-note">Submitting opens your email application with your message addressed to me. This website does not send or store messages.</p>
@@ -1097,160 +1122,6 @@
     <svg aria-hidden="true"><use href="#icon-up"></use></svg>
   </button>
 
-  <script>
-    const menuToggle = document.querySelector("#menuToggle");
-    const navLinks = document.querySelector("#navLinks");
-
-    const projectRows = document.querySelectorAll("[data-project-reveal]");
-    const projectCarousel = document.querySelector("#featuredProjects");
-    const projectCarouselButtons = document.querySelectorAll(".project-carousel-button");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (projectCarousel && projectCarouselButtons.length) {
-      document.documentElement.classList.add("has-project-carousel");
-
-      const updateProjectControls = () => {
-        const atStart = projectCarousel.scrollLeft <= 1;
-        const atEnd = projectCarousel.scrollLeft + projectCarousel.clientWidth >= projectCarousel.scrollWidth - 1;
-        projectCarouselButtons[0].disabled = atStart;
-        projectCarouselButtons[1].disabled = atEnd;
-      };
-      const scrollProjects = (direction) => {
-        const firstProject = projectCarousel.querySelector("[data-project-reveal]");
-        if (!firstProject) return;
-        const styles = window.getComputedStyle(projectCarousel);
-        const gap = parseFloat(styles.columnGap) || 0;
-        projectCarousel.scrollBy({
-          left: direction * (firstProject.getBoundingClientRect().width + gap),
-          behavior: prefersReducedMotion ? "auto" : "smooth"
-        });
-      };
-
-      projectCarouselButtons[0].addEventListener("click", () => scrollProjects(-1));
-      projectCarouselButtons[1].addEventListener("click", () => scrollProjects(1));
-      projectCarousel.addEventListener("scroll", updateProjectControls, { passive: true });
-      projectCarousel.addEventListener("keydown", (event) => {
-        if (event.target !== projectCarousel || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
-        event.preventDefault();
-        scrollProjects(event.key === "ArrowRight" ? 1 : -1);
-      });
-      window.addEventListener("resize", updateProjectControls);
-      updateProjectControls();
-    }
-
-    const revealSections = document.querySelectorAll("[data-section-reveal]");
-    if (revealSections.length && !prefersReducedMotion && "IntersectionObserver" in window) {
-      document.documentElement.classList.add("has-section-motion");
-      const sectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
-
-      revealSections.forEach((section) => sectionObserver.observe(section));
-    }
-
-    if (projectRows.length && !prefersReducedMotion && "IntersectionObserver" in window) {
-      document.documentElement.classList.add("has-project-motion");
-      const projectObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { root: projectCarousel, threshold: 0.12 });
-
-      projectRows.forEach((row) => projectObserver.observe(row));
-    }
-
-    document.querySelectorAll("[data-subject]").forEach((link) => {
-      link.addEventListener("click", () => {
-        document.querySelector('#contactForm [name="subject"]').value = link.dataset.subject;
-      });
-    });
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navLinks.addEventListener("click", (event) => {
-      if (event.target.closest("a")) {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.querySelector("#year").textContent = new Date().getFullYear();
-
-    const backTop = document.querySelector("#backTop");
-    const updateBackTop = () => {
-      backTop.classList.toggle("visible", window.scrollY > 600);
-    };
-    window.addEventListener("scroll", updateBackTop, { passive: true });
-    updateBackTop();
-    backTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
-    });
-
-    const copyEmail = document.querySelector("#copyEmail");
-    const copyStatus = document.querySelector("#copyStatus");
-    const emailAddress = "wbmlauzi@gmail.com";
-    let copyStatusTimer;
-    copyEmail.addEventListener("click", async () => {
-      let copied = false;
-      if (navigator.clipboard && window.isSecureContext) {
-        try {
-          await navigator.clipboard.writeText(emailAddress);
-          copied = true;
-        } catch {
-          copied = false;
-        }
-      }
-
-      if (!copied) {
-        const temporaryInput = document.createElement("textarea");
-        temporaryInput.value = emailAddress;
-        temporaryInput.setAttribute("readonly", "");
-        temporaryInput.style.position = "fixed";
-        temporaryInput.style.opacity = "0";
-        document.body.append(temporaryInput);
-        temporaryInput.select();
-        try {
-          copied = document.execCommand("copy");
-        } catch {
-          copied = false;
-        } finally {
-          temporaryInput.remove();
-        }
-      }
-
-      copyStatus.textContent = copied ? "Email copied!" : "Copy failed; select the email above.";
-      window.clearTimeout(copyStatusTimer);
-      copyStatusTimer = window.setTimeout(() => { copyStatus.textContent = ""; }, 3000);
-    });
-
-    document.querySelector("#contactForm").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const data = new FormData(form);
-      const name = String(data.get("name")).trim();
-      const email = String(data.get("email")).trim();
-      const subject = String(data.get("subject")).trim();
-      const message = String(data.get("message")).trim();
-
-      if (!name || !email || !subject || !message) {
-        document.querySelector("#formStatus").textContent = "Please complete all fields.";
-        return;
-      }
-
-      const body = `${message}\n\n— ${name} (${email})`;
-      document.querySelector("#formStatus").textContent = "Your email application should open with the message prepared.";
-      window.location.href = `mailto:wbmlauzi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
