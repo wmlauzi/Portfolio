@@ -651,6 +651,89 @@
   background: #c7f36b;
   border-color: #c7f36b;
 }
+
+    .projects {
+      display: flex;
+      gap: clamp(16px, 2.4vw, 28px);
+      overflow-x: auto;
+      padding: 8px 4px 20px;
+      margin: -8px -4px 0;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 4px;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(23, 25, 31, .38) transparent;
+    }
+    .projects::-webkit-scrollbar { height: 6px; }
+    .projects::-webkit-scrollbar-track { background: transparent; }
+    .projects::-webkit-scrollbar-thumb { background: rgba(23, 25, 31, .3); }
+    .project-row, .project-row:nth-child(even) {
+      flex: 0 0 84%;
+      min-width: 0;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      grid-template-areas: "media info";
+      align-items: start;
+      gap: clamp(24px, 4vw, 56px);
+      padding: clamp(24px, 3vw, 40px);
+      border: 1px solid var(--line);
+      background: var(--card);
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+    .project-row:last-child { border-bottom: 1px solid var(--line); }
+    .project-info h3 { font-size: clamp(30px, 3.8vw, 48px); }
+    .project-carousel-controls {
+      display: none;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: -24px 0 18px;
+    }
+    .has-project-carousel .project-carousel-controls { display: flex; }
+    .project-carousel-button {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: transparent;
+      font: 20px/1 var(--body);
+      cursor: pointer;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+    .project-carousel-button:hover:not(:disabled) {
+      border-color: var(--ink);
+      color: var(--paper);
+      background: var(--ink);
+    }
+    .project-carousel-button:disabled { opacity: .38; cursor: default; }
+    @media (max-width: 900px) {
+      .project-row, .project-row:nth-child(even) {
+        flex-basis: 88%;
+        grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+        gap: 24px;
+        padding: 24px;
+      }
+    }
+    @media (max-width: 700px) {
+      .project-carousel-controls { display: none !important; }
+      .projects { gap: 16px; }
+      .project-row, .project-row:nth-child(even) {
+        flex-basis: 88%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "media" "info";
+        gap: 22px;
+        padding: 20px;
+      }
+      .project-info h3 { font-size: clamp(32px, 9vw, 44px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .projects { scroll-behavior: auto; }
+    }
   </style>
 </head>
 
@@ -791,8 +874,12 @@
     <section id="development" data-section-reveal>
       <div class="wrap">
         <h2>Featured projects.</h2>
-        <p class="section-intro">Two live business websites built to make service information easy to find and customer enquiries straightforward.</p>
-        <div class="projects">
+        <p class="section-intro">Three live business websites built to make service information easy to find and customer enquiries straightforward.</p>
+        <div class="project-carousel-controls" role="group" aria-label="Featured project navigation">
+          <button class="project-carousel-button" type="button" aria-label="Previous projects" aria-controls="featuredProjects">←</button>
+          <button class="project-carousel-button" type="button" aria-label="Next projects" aria-controls="featuredProjects">→</button>
+        </div>
+        <div class="projects" id="featuredProjects" role="region" aria-label="Featured projects" aria-roledescription="carousel" tabindex="0">
           <article class="project-row" data-project-reveal>
             <div class="project-media">
               <img src="assets/images/projects/keso-cleaning-services.jpg" alt="Screenshot of the KESO Cleaning Services website, showing its services and WhatsApp enquiry links." width="1280" height="960" loading="lazy" decoding="async">
@@ -823,6 +910,22 @@
                 <div class="project-detail"><span>Technologies</span><div class="project-tech"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span></div></div>
               </div>
               <a class="project-link" href="https://sparkle-shine-wash.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-row" data-project-reveal>
+            <div class="project-media">
+              <img src="assets/images/projects/mizu-industrial-website.png" alt="Screenshot of the MIZU INDUSTRIAL website homepage, presenting biomass energy, briquettes and cooking stoves in Malawi." width="1366" height="768" loading="lazy" decoding="async">
+            </div>
+            <div class="project-info">
+              <div class="project-heading"><span class="project-number">03</span><span class="project-category">Business website · Web development</span></div>
+              <h3>MIZU INDUSTRIAL</h3>
+              <p class="project-description">A responsive business website for a Malawian biomass energy and cooking solutions enterprise. It presents charcoal-dust briquettes, metal and clay cooking stoves, the company's approach, products and business information.</p>
+              <p class="project-contribution"><strong>Website features</strong> — Company profile, product showcases, dedicated approach and product sections, responsive navigation, structured content, and contact information with an enquiry interface.</p>
+              <div class="project-details">
+                <p class="project-detail"><span>Sector</span><span>Biomass energy · Cooking solutions</span></p>
+                <p class="project-detail"><span>Location</span><span>Malawi</span></p>
+              </div>
+              <a class="project-link" href="https://mizu-cooking-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
@@ -999,7 +1102,41 @@
     const navLinks = document.querySelector("#navLinks");
 
     const projectRows = document.querySelectorAll("[data-project-reveal]");
+    const projectCarousel = document.querySelector("#featuredProjects");
+    const projectCarouselButtons = document.querySelectorAll(".project-carousel-button");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (projectCarousel && projectCarouselButtons.length) {
+      document.documentElement.classList.add("has-project-carousel");
+
+      const updateProjectControls = () => {
+        const atStart = projectCarousel.scrollLeft <= 1;
+        const atEnd = projectCarousel.scrollLeft + projectCarousel.clientWidth >= projectCarousel.scrollWidth - 1;
+        projectCarouselButtons[0].disabled = atStart;
+        projectCarouselButtons[1].disabled = atEnd;
+      };
+      const scrollProjects = (direction) => {
+        const firstProject = projectCarousel.querySelector("[data-project-reveal]");
+        if (!firstProject) return;
+        const styles = window.getComputedStyle(projectCarousel);
+        const gap = parseFloat(styles.columnGap) || 0;
+        projectCarousel.scrollBy({
+          left: direction * (firstProject.getBoundingClientRect().width + gap),
+          behavior: prefersReducedMotion ? "auto" : "smooth"
+        });
+      };
+
+      projectCarouselButtons[0].addEventListener("click", () => scrollProjects(-1));
+      projectCarouselButtons[1].addEventListener("click", () => scrollProjects(1));
+      projectCarousel.addEventListener("scroll", updateProjectControls, { passive: true });
+      projectCarousel.addEventListener("keydown", (event) => {
+        if (event.target !== projectCarousel || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+        event.preventDefault();
+        scrollProjects(event.key === "ArrowRight" ? 1 : -1);
+      });
+      window.addEventListener("resize", updateProjectControls);
+      updateProjectControls();
+    }
+
     const revealSections = document.querySelectorAll("[data-section-reveal]");
     if (revealSections.length && !prefersReducedMotion && "IntersectionObserver" in window) {
       document.documentElement.classList.add("has-section-motion");
@@ -1024,7 +1161,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+      }, { root: projectCarousel, threshold: 0.12 });
 
       projectRows.forEach((row) => projectObserver.observe(row));
     }
