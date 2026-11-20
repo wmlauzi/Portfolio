@@ -148,6 +148,6 @@ document.querySelector("#contactForm").addEventListener("submit", (event) => {
   }
 
   const body = `${message}\n\n— ${name} (${email})`;
-  document.querySelector("#formStatus").textContent = "Your email application should open with the message prepared.";
+  document.querySelector("#formStatus").textContent = "Opening your email application. If it does not open, use the direct email link below.";
   window.location.href = `mailto:wbmlauzi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
