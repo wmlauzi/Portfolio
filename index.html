@@ -143,6 +143,11 @@
       gap: 12px; padding: clamp(28px, 5vw, 64px); color: #f4f7ef;
       background: linear-gradient(135deg, #163d2b, #245b3e);
     }
+    .maizeplan-panel { background: linear-gradient(135deg, #173d2c, #356d45); }
+    .maizeplan-panel .project-brand-mark span { color: #c7f36b; }
+    .farmmargin-panel { background: linear-gradient(135deg, #172d3b, #315b68); }
+    .farmmargin-panel .project-brand-mark span { color: #a7d7d8; }
+    .agritech-projects .project-row:first-child { border-top: 0; }
     .project-brand-mark { font: 700 clamp(58px, 8vw, 100px)/.9 var(--heading); letter-spacing: -.09em; }
     .project-brand-mark span { color: #a7d7a8; }
     .project-brand-name { font: 600 clamp(24px, 3vw, 36px)/1.1 var(--heading); }
@@ -1025,21 +1030,55 @@
 
     <section id="agritech" data-section-reveal>
       <div class="wrap">
-        <p class="mono eyebrow">AGRITECH / INEST AGRO</p>
-        <h2>Technology for better farm decisions.</h2>
-        <p class="section-intro">I’m building practical digital tools through iNest Agro, an independent agritech company focused on helping farmers plan production and understand farm economics.</p>
-        <div class="two-cards">
-          <article class="info-card">
-            <span class="service-label">MaizePlan · Maize Farm Planner</span>
-            <h3>Plan maize production with more clarity.</h3>
-            <p>MaizePlan brings together practical maize production planning calculations, including seed requirements, fertiliser planning and plant population.</p>
-            <a class="button primary" href="https://maizeplan.vercel.app/" target="_blank" rel="noopener noreferrer">Explore MaizePlan <span class="project-arrow" aria-hidden="true">↗</span></a>
+        <p class="mono eyebrow">SELECTED WORK / 02 · AGRITECH</p>
+        <h2>Building tools for better farm decisions.</h2>
+        <p class="section-intro">These digital products are being developed through iNest Agro, an independent Malawian agritech company. Explore each product to see how I’m applying software to practical maize production and farm business challenges.</p>
+
+        <div class="work-category-heading">
+          <p class="mono eyebrow">02 / AGRITECH PRODUCTS</p>
+          <h3>Digital tools for agriculture.</h3>
+          <p>Product-led software focused on production planning and farm financial understanding.</p>
+        </div>
+
+        <div class="projects agritech-projects">
+          <article class="project-row" data-project-reveal>
+            <div class="project-media project-brand-panel maizeplan-panel" role="img" aria-label="MaizePlan product visual">
+              <span class="project-brand-caption">INEST AGRO / FARM PLANNING TOOL</span>
+              <span class="project-brand-mark">Maize<span>Plan.</span></span>
+              <span class="project-brand-name">Maize Farm Planner</span>
+              <span class="project-brand-url">PLAN · CALCULATE · PREPARE ↗</span>
+            </div>
+            <div class="project-info">
+              <div class="project-heading"><span class="project-number">01</span><span class="project-category">Agritech · Farm planning</span></div>
+              <h3>MaizePlan</h3>
+              <p class="project-description">A maize production planning tool designed to help farmers work out key input requirements before planting. It brings seed requirements, fertiliser planning and plant population calculations into one practical workflow.</p>
+              <p class="project-contribution"><strong>My contribution</strong> — Building the product and its calculation workflows, translating common maize planning tasks into accessible digital tools.</p>
+              <div class="project-details">
+                <p class="project-detail"><span>Purpose</span><span>Maize production planning</span></p>
+                <p class="project-detail"><span>Key tools</span><span>Seed · Fertiliser · Plant population</span></p>
+              </div>
+              <a class="project-link" href="https://maizeplan.vercel.app/" target="_blank" rel="noopener noreferrer">Explore MaizePlan <span class="project-arrow" aria-hidden="true">↗</span></a>
+            </div>
           </article>
-          <article class="info-card">
-            <span class="service-label">FarmMargin · Gross Margin Calculator</span>
-            <h3>Understand the numbers behind a farm.</h3>
-            <p>FarmMargin helps users organise production costs, estimate revenue using yield and price assumptions, and review gross margin outcomes.</p>
-            <a class="button primary" href="https://farmmargin.vercel.app/" target="_blank" rel="noopener noreferrer">Explore FarmMargin <span class="project-arrow" aria-hidden="true">↗</span></a>
+
+          <article class="project-row" data-project-reveal>
+            <div class="project-media project-brand-panel farmmargin-panel" role="img" aria-label="FarmMargin product visual">
+              <span class="project-brand-caption">INEST AGRO / FARM FINANCIAL TOOL</span>
+              <span class="project-brand-mark">Farm<span>Margin.</span></span>
+              <span class="project-brand-name">Gross Margin Calculator</span>
+              <span class="project-brand-url">COSTS · REVENUE · MARGINS ↗</span>
+            </div>
+            <div class="project-info">
+              <div class="project-heading"><span class="project-number">02</span><span class="project-category">Agritech · Farm economics</span></div>
+              <h3>FarmMargin</h3>
+              <p class="project-description">A farm gross margin calculator that helps users organise production costs, estimate revenue from yield and price assumptions, and review potential gross margin outcomes for a maize enterprise.</p>
+              <p class="project-contribution"><strong>My contribution</strong> — Building the farm setup, production cost and results workflows to make farm financial analysis easier to understand and use.</p>
+              <div class="project-details">
+                <p class="project-detail"><span>Purpose</span><span>Farm budgeting · Gross margin analysis</span></p>
+                <p class="project-detail"><span>Key workflows</span><span>Farm setup · Production costs · Results &amp; reports</span></p>
+              </div>
+              <a class="project-link" href="https://farmmargin.vercel.app/" target="_blank" rel="noopener noreferrer">Explore FarmMargin <span class="project-arrow" aria-hidden="true">↗</span></a>
+            </div>
           </article>
         </div>
         <p class="mono muted" style="margin-top:24px">PRODUCTS DEVELOPED UNDER INEST AGRO · MALAWI</p>
