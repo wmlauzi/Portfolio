@@ -122,6 +122,32 @@
     .info-card .button { align-self: flex-start; margin-top: auto; }
     .service-label { color: var(--mute); font: 12px/1.6 var(--mono); letter-spacing: .025em; text-transform: uppercase; }
     .service-list { padding-left: 20px; margin: 16px 0 24px; color: var(--mute); font-size: 14px; }
+    .work-jump-links {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+      margin: 34px 0 76px;
+    }
+    .work-jump-links a {
+      display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 14px 18px;
+      border: 1px solid var(--line); background: var(--card); text-decoration: none;
+      font: 600 13px/1.4 var(--heading); transition: border-color 220ms ease, transform 220ms ease;
+    }
+    .work-jump-links a:hover { border-color: var(--fg); transform: translateY(-2px); }
+    .work-jump-links a span:first-child { color: var(--mute); font: 11px var(--mono); }
+    .work-jump-links a span:last-child { margin-left: auto; font-size: 18px; }
+    .work-category { scroll-margin-top: 90px; }
+    .work-category-heading { max-width: 650px; margin-bottom: 28px; }
+    .work-category-heading h3 { margin: 12px 0; font-size: clamp(28px, 4vw, 42px); }
+    .work-category-heading > p:last-child { color: var(--mute); margin: 0; }
+    .project-brand-panel {
+      display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+      gap: 12px; padding: clamp(28px, 5vw, 64px); color: #f4f7ef;
+      background: linear-gradient(135deg, #163d2b, #245b3e);
+    }
+    .project-brand-mark { font: 700 clamp(58px, 8vw, 100px)/.9 var(--heading); letter-spacing: -.09em; }
+    .project-brand-mark span { color: #a7d7a8; }
+    .project-brand-name { font: 600 clamp(24px, 3vw, 36px)/1.1 var(--heading); }
+    .project-brand-caption, .project-brand-url { font: 12px/1.6 var(--mono); color: rgba(244,247,239,.78); }
+    .project-brand-url { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(244,247,239,.28); width: 100%; }
     .projects { display: grid; }
     .project-row {
       display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
@@ -276,6 +302,9 @@
       .nav-links { gap: 18px; }
     }
     @media (max-width: 700px) {
+      .work-jump-links { grid-template-columns: 1fr; margin: 26px 0 54px; }
+      .work-jump-links a { min-height: 56px; }
+
       section { padding: 76px 0; }
       .wrap { width: min(100% - 36px, 1160px); }
       .menu-toggle { display: block; }
@@ -898,66 +927,101 @@
 
     <section id="development" data-section-reveal>
       <div class="wrap">
-        <h2>Featured projects.</h2>
-        <p class="section-intro">Selected websites I’ve designed and developed for businesses, with an emphasis on clear information, responsive layouts and straightforward customer enquiries.</p>
-        <div class="project-carousel-controls" role="group" aria-label="Featured project navigation">
-          <button class="project-carousel-button" type="button" aria-label="Previous projects" aria-controls="featuredProjects">←</button>
-          <button class="project-carousel-button" type="button" aria-label="Next projects" aria-controls="featuredProjects">→</button>
-        </div>
-        <div class="projects" id="featuredProjects" role="region" aria-label="Featured projects" aria-roledescription="carousel" tabindex="0">
-          <article class="project-row" data-project-reveal>
-            <div class="project-media">
-              <img src="assets/images/projects/keso-cleaning-services.jpg" alt="Screenshot of the KESO Cleaning Services website, showing its services and WhatsApp enquiry links." width="1280" height="960" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div class="project-heading"><span class="project-number">01</span><span class="project-category">Business website</span></div>
-              <h3>KESO Cleaning Services</h3>
-              <p class="project-description">KESO Services brings its cleaning, catering and event decoration offerings together in one online destination. Visitors can explore the services and contact the business directly through WhatsApp to ask questions or make booking enquiries.</p>
-              <p class="project-contribution"><strong>My contribution</strong> — Developed and deployed the responsive website, organizing service information for prospective customers and adding direct WhatsApp enquiry links.</p>
-              <div class="project-details">
-                <p class="project-detail"><span>Category</span><span>Cleaning · Catering · Event decoration</span></p>
-                <div class="project-detail"><span>Technologies</span><div class="project-tech"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span></div></div>
+        <p class="mono eyebrow">SELECTED WORK / 01</p>
+        <h2>Projects built to be useful.</h2>
+        <p class="section-intro">Explore my work across business websites and agricultural technology. Each project is built around a practical need, from helping businesses present their services online to making farm planning decisions easier.</p>
+
+        <nav class="work-jump-links" aria-label="Explore project categories">
+          <a href="#web-projects"><span>01</span> Web Development <span aria-hidden="true">↘</span></a>
+          <a href="#agritech"><span>02</span> Agritech Products <span aria-hidden="true">↘</span></a>
+        </nav>
+
+        <div id="web-projects" class="work-category">
+          <div class="work-category-heading">
+            <p class="mono eyebrow">01 / WEB DEVELOPMENT</p>
+            <h3>Websites for businesses.</h3>
+            <p>Responsive websites that make services, products and contact information easier for customers to explore.</p>
+          </div>
+
+          <div class="project-carousel-controls" role="group" aria-label="Featured website navigation">
+            <button class="project-carousel-button" type="button" aria-label="Previous projects" aria-controls="featuredProjects">←</button>
+            <button class="project-carousel-button" type="button" aria-label="Next projects" aria-controls="featuredProjects">→</button>
+          </div>
+          <div class="projects" id="featuredProjects" role="region" aria-label="Web development projects" aria-roledescription="carousel" tabindex="0">
+            <article class="project-row" data-project-reveal>
+              <div class="project-media">
+                <img src="assets/images/projects/mizu-industrial-website.png" alt="Screenshot of the MIZU INDUSTRIAL website homepage, presenting biomass energy, briquettes and cooking stoves in Malawi." width="1366" height="768" loading="lazy" decoding="async">
               </div>
-              <a class="project-link" href="https://kesomw.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="project-row" data-project-reveal>
-            <div class="project-media">
-              <img src="assets/images/projects/splashway-car-wash.jpg" alt="Screenshot of the SplashWay car wash website, showing car wash services and a WhatsApp call to action." width="1280" height="960" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div class="project-heading"><span class="project-number">02</span><span class="project-category">Car wash website</span></div>
-              <h3>SplashWay Car Wash</h3>
-              <p>The car wash website presents the service offering online and gives potential customers a direct WhatsApp route to ask questions or request a booking.</p>
-              <p class="project-contribution"><strong>My contribution</strong> — Developed and deployed the responsive website, presenting the service and connecting customer enquiries to WhatsApp.</p>
-              <div class="project-details">
-                <p class="project-detail"><span>Category</span><span>Car wash services</span></p>
-                <div class="project-detail"><span>Technologies</span><div class="project-tech"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span></div></div>
+              <div class="project-info">
+                <div class="project-heading"><span class="project-number">01</span><span class="project-category">Business website</span></div>
+                <h3>MIZU INDUSTRIAL</h3>
+                <p class="project-description">A responsive website for a Malawian biomass energy and cooking solutions enterprise. It introduces the company and makes its briquettes, cooking stoves and business information easier to discover.</p>
+                <p class="project-contribution"><strong>My contribution</strong> — Developed and deployed the website, organising the company profile, product showcases and enquiry information into a clear online experience.</p>
+                <div class="project-details">
+                  <p class="project-detail"><span>Sector</span><span>Biomass energy · Cooking solutions</span></p>
+                  <p class="project-detail"><span>Location</span><span>Malawi</span></p>
+                </div>
+                <a class="project-link" href="https://mizu-cooking-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
               </div>
-              <a class="project-link" href="https://sparkle-shine-wash.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="project-row" data-project-reveal>
-            <div class="project-media">
-              <img src="assets/images/projects/mizu-industrial-website.png" alt="Screenshot of the MIZU INDUSTRIAL website homepage, presenting biomass energy, briquettes and cooking stoves in Malawi." width="1366" height="768" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div class="project-heading"><span class="project-number">03</span><span class="project-category">Business website · Web development</span></div>
-              <h3>MIZU INDUSTRIAL</h3>
-              <p class="project-description">A responsive business website for a Malawian biomass energy and cooking solutions enterprise. It presents charcoal-dust briquettes, metal and clay cooking stoves, the company's approach, products and business information.</p>
-              <p class="project-contribution"><strong>Website features</strong> — Company profile, product showcases, dedicated approach and product sections, responsive navigation, structured content, and contact information with an enquiry interface.</p>
-              <div class="project-details">
-                <p class="project-detail"><span>Sector</span><span>Biomass energy · Cooking solutions</span></p>
-                <p class="project-detail"><span>Location</span><span>Malawi</span></p>
+            </article>
+
+            <article class="project-row" data-project-reveal>
+              <div class="project-media">
+                <img src="assets/images/projects/keso-cleaning-services.jpg" alt="Screenshot of the KESO Cleaning Services website, showing its services and WhatsApp enquiry links." width="1280" height="960" loading="lazy" decoding="async">
               </div>
-              <a class="project-link" href="https://mizu-cooking-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
-            </div>
-          </article>
+              <div class="project-info">
+                <div class="project-heading"><span class="project-number">02</span><span class="project-category">Business website</span></div>
+                <h3>KESO Cleaning Services</h3>
+                <p class="project-description">A single online destination for cleaning, catering and event decoration services, helping prospective customers understand the offering and make direct enquiries.</p>
+                <p class="project-contribution"><strong>My contribution</strong> — Developed and deployed the responsive website, structured service information and added direct WhatsApp enquiry links.</p>
+                <div class="project-details">
+                  <p class="project-detail"><span>Services</span><span>Cleaning · Catering · Event decoration</span></p>
+                  <div class="project-detail"><span>Technologies</span><div class="project-tech"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span></div></div>
+                </div>
+                <a class="project-link" href="https://kesomw.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project-row" data-project-reveal>
+              <div class="project-media">
+                <img src="assets/images/projects/splashway-car-wash.jpg" alt="Screenshot of the SplashWay car wash website, showing car wash services and a WhatsApp call to action." width="1280" height="960" loading="lazy" decoding="async">
+              </div>
+              <div class="project-info">
+                <div class="project-heading"><span class="project-number">03</span><span class="project-category">Service website</span></div>
+                <h3>SplashWay Car Wash</h3>
+                <p class="project-description">A service website that presents the car wash offering clearly and gives potential customers a direct route to ask questions or request a booking.</p>
+                <p class="project-contribution"><strong>My contribution</strong> — Developed and deployed the responsive website, presenting the service and connecting customer enquiries to WhatsApp.</p>
+                <div class="project-details">
+                  <p class="project-detail"><span>Category</span><span>Car wash services</span></p>
+                  <div class="project-detail"><span>Technologies</span><div class="project-tech"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span></div></div>
+                </div>
+                <a class="project-link" href="https://sparkle-shine-wash.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Website <span class="project-arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="project-row project-row-feature" data-project-reveal>
+              <div class="project-media project-brand-panel" role="img" aria-label="iNest Agro company website project visual">
+                <span class="project-brand-mark">iN<span>.</span></span>
+                <span class="project-brand-name">iNest Agro</span>
+                <span class="project-brand-caption">Smarter Farming. Better Decisions.</span>
+                <span class="project-brand-url">inestagro.vercel.app ↗</span>
+              </div>
+              <div class="project-info">
+                <div class="project-heading"><span class="project-number">04</span><span class="project-category">Company website</span></div>
+                <h3>iNest Agro</h3>
+                <p class="project-description">The company website for an independent Malawian agritech venture. It introduces iNest Agro, explains its focus on practical farm decision tools and connects visitors to its digital products.</p>
+                <p class="project-contribution"><strong>My contribution</strong> — Building the company’s digital presence and presenting its mission, solutions and product ecosystem in a clear, accessible way.</p>
+                <div class="project-details">
+                  <p class="project-detail"><span>Focus</span><span>Agricultural technology · Digital farm tools</span></p>
+                  <p class="project-detail"><span>Location</span><span>Malawi</span></p>
+                </div>
+                <a class="project-link" href="https://inestagro.vercel.app/" target="_blank" rel="noopener noreferrer">Visit iNest Agro <span class="project-arrow" aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
-
-
 
     <section id="agritech" data-section-reveal>
       <div class="wrap">
