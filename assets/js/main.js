@@ -61,7 +61,7 @@ if (projectRows.length && !prefersReducedMotion && "IntersectionObserver" in win
         observer.unobserve(entry.target);
       }
     });
-  }, { root: projectCarousel, threshold: 0.12 });
+  }, { root: null, threshold: 0.12 });
 
   projectRows.forEach((row) => projectObserver.observe(row));
 }
