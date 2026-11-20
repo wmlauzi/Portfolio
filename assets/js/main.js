@@ -2,6 +2,7 @@ const menuToggle = document.querySelector("#menuToggle");
 const navLinks = document.querySelector("#navLinks");
 
 const projectRows = document.querySelectorAll("[data-project-reveal]");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealSections = document.querySelectorAll("[data-section-reveal]");
 if (revealSections.length && !prefersReducedMotion && "IntersectionObserver" in window) {
   document.documentElement.classList.add("has-section-motion");
