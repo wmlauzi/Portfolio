@@ -2,41 +2,6 @@ const menuToggle = document.querySelector("#menuToggle");
 const navLinks = document.querySelector("#navLinks");
 
 const projectRows = document.querySelectorAll("[data-project-reveal]");
-const projectCarousel = document.querySelector("#featuredProjects");
-const projectCarouselButtons = document.querySelectorAll(".project-carousel-button");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (projectCarousel && projectCarouselButtons.length) {
-  document.documentElement.classList.add("has-project-carousel");
-
-  const updateProjectControls = () => {
-    const atStart = projectCarousel.scrollLeft <= 1;
-    const atEnd = projectCarousel.scrollLeft + projectCarousel.clientWidth >= projectCarousel.scrollWidth - 1;
-    projectCarouselButtons[0].disabled = atStart;
-    projectCarouselButtons[1].disabled = atEnd;
-  };
-  const scrollProjects = (direction) => {
-    const firstProject = projectCarousel.querySelector("[data-project-reveal]");
-    if (!firstProject) return;
-    const styles = window.getComputedStyle(projectCarousel);
-    const gap = parseFloat(styles.columnGap) || 0;
-    projectCarousel.scrollBy({
-      left: direction * (firstProject.getBoundingClientRect().width + gap),
-      behavior: prefersReducedMotion ? "auto" : "smooth"
-    });
-  };
-
-  projectCarouselButtons[0].addEventListener("click", () => scrollProjects(-1));
-  projectCarouselButtons[1].addEventListener("click", () => scrollProjects(1));
-  projectCarousel.addEventListener("scroll", updateProjectControls, { passive: true });
-  projectCarousel.addEventListener("keydown", (event) => {
-    if (event.target !== projectCarousel || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
-    event.preventDefault();
-    scrollProjects(event.key === "ArrowRight" ? 1 : -1);
-  });
-  window.addEventListener("resize", updateProjectControls);
-  updateProjectControls();
-}
-
 const revealSections = document.querySelectorAll("[data-section-reveal]");
 if (revealSections.length && !prefersReducedMotion && "IntersectionObserver" in window) {
   document.documentElement.classList.add("has-section-motion");
