@@ -469,8 +469,7 @@
     #about .about-copy { max-width: 1040px; }
     #about .about-eyebrow { margin: 0 0 16px; color: var(--mute); }
     #about h2 { max-width: 16ch; margin-bottom: 34px; }
-    #about .about-layout { display: grid; grid-template-columns: minmax(200px, .7fr) minmax(0, 1.5fr); align-items: start; gap: clamp(36px, 7vw, 88px); }
-    #about .about-portrait { display: block; width: min(100%, 300px); height: auto; border: 0; border-radius: 0; object-fit: contain; object-position: center; }
+    #about .about-layout { display: block; max-width: 900px; }
     #about .about-paragraphs { display: grid; gap: 18px; }
     #about .about-paragraphs p { max-width: 78ch; margin: 0; }
     #about .about-paragraphs p + p { padding-top: 18px; border-top: 1px solid rgba(244, 240, 232, .18); }
@@ -974,13 +973,11 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#home">Wanangwa Mlauzi</a>
-      <span class="availability"><i aria-hidden="true"></i>OPEN TO INTERNSHIPS, HIRING &amp; FREELANCE PROJECTS</span>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
-        <a href="#services">SERVICES</a>
-        <a href="#development">MY WORK</a>
+        <a href="#development">PROJECTS</a>
         <a href="#toolkit">SKILLS</a>
         <a class="nav-contact" href="#contact">CONTACT</a>
       </nav>
@@ -993,7 +990,7 @@
         <div>
           <p class="mono eyebrow">WEB DEVELOPMENT · AGRITECH</p>
           <h1><span>Web Developer</span><span>&amp; Agritech Builder</span></h1>
-          <p class="lede">I build responsive websites that help businesses present themselves online, alongside practical digital tools for agriculture. I’m a Computer Science undergraduate in Malawi, combining web development with an agriculture background to turn real-world needs into useful digital experiences.</p>
+          <p class="lede">I build responsive websites and practical digital tools for agriculture. I’m a Computer Science undergraduate in Malawi, combining software development with an agriculture background to solve real-world problems.</p>
           <p class="availability-note"><span class="availability-dot" aria-hidden="true"></span>Available for freelance projects and opportunities</p>
           <div class="hero-actions">
             <a class="button primary" href="#development">View My Work <span class="project-arrow" aria-hidden="true">↗</span></a>
@@ -1026,14 +1023,12 @@
     <section class="dark-section" id="about" data-section-reveal>
       <div class="wrap about-copy">
         <div class="about-layout">
-          <img class="about-portrait" src="assets/images/Profile-image.png" alt="Portrait of Wanangwa Mlauzi">
           <div class="about-content">
             <p class="mono eyebrow about-eyebrow">ABOUT ME</p>
             <h2>Building for the web. Exploring technology for agriculture.</h2>
             <div class="about-paragraphs">
-              <p>My journey into technology began with agriculture. While studying agriculture, I became interested in how big data and technology could transform farming and improve decision-making. That curiosity inspired me to transition into Computer Science, where I could develop the technical skills to turn those ideas into practical solutions.</p>
-              <p>I’m now a Computer Science undergraduate with a focus on web development and agritech. Through hands-on projects, I build responsive web experiences and practical digital tools. My work in agriculture includes iNest Agro, an independent agritech company behind MaizePlan and FarmMargin—tools designed to support better farm planning and financial decisions.</p>
-              <p>I’m continuously developing my skills through coursework, independent learning and building real projects. I’m particularly interested in precision agriculture, agricultural data and intelligent systems that can address practical challenges in farming across Africa.</p>
+              <p>My journey into technology began while studying agriculture. I became interested in how big data and technology could transform farming and improve decision-making, which inspired me to transition into Computer Science.</p>
+              <p>I’m now developing responsive web experiences and practical digital tools. My agritech work includes iNest Agro, an independent Malawian company behind MaizePlan and FarmMargin. I’m particularly interested in precision agriculture, agricultural data and intelligent systems for farming in Africa.</p>
             </div>
             <ul class="about-meta" aria-label="Professional details">
               <li class="about-meta-item">
@@ -1055,65 +1050,28 @@
       </div>
     </section>
 
-    <section id="services" data-section-reveal>
-      <div class="wrap">
-        <h2>What I’m building.</h2>
-        <p class="section-intro">I focus on creating useful digital experiences for businesses and practical technology tools that support better decisions in agriculture.</p>
-        <div class="two-cards">
-          <article class="info-card">
-            <span class="service-label">Web Development</span>
-            <h3>Build a useful online presence.</h3>
-            <p>I create clear, responsive online experiences so customers can understand what your business offers and know how to contact you.</p>
-            <ul class="service-list">
-              <li>Business websites and landing pages</li>
-              <li>Website redesigns and responsive page updates</li>
-              <li>Ongoing website updates and maintenance</li>
-            </ul>
-            <a class="button primary" href="#contactForm" data-subject="Website development enquiry">Discuss a Website Project</a>
-          </article>
-          <article class="info-card">
-            <span class="service-label">Agritech</span>
-            <h3>Build practical tools for agriculture.</h3>
-            <p>I’m exploring how software and data-informed tools can help make farm planning and financial decisions clearer and more accessible.</p>
-            <ul class="service-list">
-              <li>Farm planning and input calculations</li>
-              <li>Production cost and gross margin analysis</li>
-              <li>Digital tools shaped around practical farming needs</li>
-            </ul>
-            <a class="button primary" href="#agritech" data-subject="Agritech collaboration enquiry">Explore Agritech Work</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="development" data-section-reveal>
       <div class="wrap">
         <p class="mono eyebrow">SELECTED WORK / 01–02</p>
         <h2>Projects built to be useful.</h2>
-        <p class="section-intro">My work brings together two connected interests: building useful digital experiences for businesses and applying software to practical challenges in agriculture. Both are driven by the same goal — making technology useful in the real world.</p>
-
-        <nav class="work-jump-links" aria-label="Explore project categories">
-          <a href="#web-projects"><span>01</span> Web Development <span aria-hidden="true">↘</span></a>
-          <a href="#agritech"><span>02</span> Agritech Products <span aria-hidden="true">↘</span></a>
-        </nav>
+        <p class="section-intro">A selection of business websites and digital tools shaped around practical needs.</p>
 
         <div id="web-projects" class="work-category">
-          <button class="collection-toggle" id="webCollectionToggle" type="button" aria-expanded="true" aria-controls="webCollectionPanel">
+          <button class="collection-toggle" id="webCollectionToggle" type="button" aria-expanded="false" aria-controls="webCollectionPanel">
             <span class="collection-toggle-copy">
               <span class="collection-index">01 / WEB DEVELOPMENT</span>
               <span class="collection-title">Websites for businesses.</span>
               <span class="collection-description">Responsive websites that make services, products and contact information easier for customers to explore.</span>
-              <span class="collection-preview">03 PROJECTS <span aria-hidden="true">·</span> BUSINESS &amp; COMPANY WEBSITES</span>
+              <span class="collection-preview">04 PROJECTS <span aria-hidden="true">·</span> BUSINESS &amp; COMPANY WEBSITES</span>
             </span>
             <span class="collection-toggle-icon" aria-hidden="true"><span></span><span></span></span>
           </button>
 
           
-          <div class="collection-panel is-expanded" id="webCollectionPanel" aria-hidden="false">
+          <div class="collection-panel" id="webCollectionPanel" aria-hidden="true" inert>
             <div class="collection-panel-inner">
               <div class="collection-controls">
-                <span class="collection-hint">SCROLL TO EXPLORE</span>
-                <div class="collection-arrows">
+                  <div class="collection-arrows">
                   <button class="collection-arrow" type="button" data-scroll-prev aria-label="Scroll Web Development projects left" disabled><span aria-hidden="true">←</span></button>
                   <button class="collection-arrow" type="button" data-scroll-next aria-label="Scroll Web Development projects right"><span aria-hidden="true">→</span></button>
                 </div>
@@ -1122,30 +1080,27 @@
             <article class="project-row" data-project-reveal>
               <div class="project-media"><img src="assets/images/projects/mizu-industrial-website.png" alt="MIZU INDUSTRIAL website homepage presenting biomass energy, briquettes and cooking stoves." width="1366" height="768" loading="lazy" decoding="async"></div>
               <div class="project-info">
-                <div class="project-tags"><span class="project-category">Business website</span><span class="project-status">Live</span></div>
+                <div class="project-tags"><span class="project-status">Live</span></div>
                 <h3>MIZU INDUSTRIAL</h3>
-                <p class="project-description">A business website for a Malawian biomass-energy and cooking-solutions enterprise. I built the responsive company profile, organised briquette and stove product information, and made enquiries easy to find.</p>
-                <div class="project-details project-meta" aria-label="Project focus"><span>Biomass energy</span><span>Briquettes &amp; cooking stoves</span></div>
+                <p class="project-description">A responsive company website presenting biomass-energy products and making customer enquiries easy.</p>
                 <a class="project-link" href="https://mizu-cooking-solutions.vercel.app/" target="_blank" rel="noopener noreferrer">View live site <span class="project-arrow" aria-hidden="true">↗</span></a>
               </div>
             </article>
             <article class="project-row" data-project-reveal>
               <div class="project-media"><img src="assets/images/projects/keso-cleaning-services.jpg" alt="KESO Cleaning Services website showing its cleaning, catering and event decoration services." width="1280" height="960" loading="lazy" decoding="async"></div>
               <div class="project-info">
-                <div class="project-tags"><span class="project-category">Business website</span><span class="project-status">Live</span></div>
+                <div class="project-tags"><span class="project-status">Live</span></div>
                 <h3>KESO Cleaning Services</h3>
-                <p class="project-description">A service website that brings cleaning, catering and event-decoration offerings together in one place. I built the responsive pages and added WhatsApp enquiry links so prospective customers can contact the business directly.</p>
-                <div class="project-details project-meta" aria-label="Project focus"><span>Cleaning services</span><span>Catering</span><span>Event decoration</span></div>
+                <p class="project-description">A responsive service website bringing cleaning, catering and event decoration together, with direct WhatsApp enquiries.</p>
                 <a class="project-link" href="https://kesomw.vercel.app/" target="_blank" rel="noopener noreferrer">View live site <span class="project-arrow" aria-hidden="true">↗</span></a>
               </div>
             </article>
             <article class="project-row" data-project-reveal>
               <div class="project-media"><img src="assets/images/projects/splashway-car-wash.jpg" alt="SplashWay Car Wash website showing its car wash services and WhatsApp enquiry option." width="1280" height="960" loading="lazy" decoding="async"></div>
               <div class="project-info">
-                <div class="project-tags"><span class="project-category">Business website</span><span class="project-status">Live</span></div>
+                <div class="project-tags"><span class="project-status">Live</span></div>
                 <h3>SplashWay Car Wash</h3>
-                <p class="project-description">A customer-facing website for a car-wash service, presenting its offering and guiding visitors towards enquiries and booking requests. I built and deployed the responsive experience with a direct WhatsApp contact path.</p>
-                <div class="project-details project-meta" aria-label="Project focus"><span>Car wash services</span><span>Customer enquiries</span><span>WhatsApp contact</span></div>
+                <p class="project-description">A responsive car-wash website that presents its services and guides customers to WhatsApp enquiries.</p>
                 <a class="project-link" href="https://sparkle-shine-wash.vercel.app/" target="_blank" rel="noopener noreferrer">View live site <span class="project-arrow" aria-hidden="true">↗</span></a>
               </div>
             </article>
@@ -1154,10 +1109,9 @@
                 <span class="project-brand-mark">iN<span>.</span></span><span class="project-brand-name">iNest Agro</span><span class="project-brand-caption">Smarter Farming. Better Decisions.</span><span class="project-brand-url">inestagro.vercel.app · WEBSITE ↗</span>
               </div>
               <div class="project-info">
-                <div class="project-tags"><span class="project-category">Company website</span><span class="project-status">In development</span></div>
+                <div class="project-tags"><span class="project-status">In development</span></div>
                 <h3>iNest Agro</h3>
-                <p class="project-description">The company website for iNest Agro, an independent Malawian agritech company. I’m shaping its online presence around its mission and practical digital tools, including MaizePlan and FarmMargin, products developed under iNest Agro.</p>
-                <div class="project-details project-meta" aria-label="Project focus"><span>Agritech company</span><span>Digital farm tools</span></div>
+                <p class="project-description">The website for iNest Agro, an independent Malawian agritech company developing practical digital tools, including MaizePlan and FarmMargin.</p>
                 <a class="project-link" href="https://inestagro.vercel.app/" target="_blank" rel="noopener noreferrer">View live site <span class="project-arrow" aria-hidden="true">↗</span></a>
               </div>
             </article>
@@ -1167,7 +1121,7 @@
         </div>
 
         <div id="agritech" class="work-category">
-<button class="collection-toggle" id="agroCollectionToggle" type="button" aria-expanded="true" aria-controls="agroCollectionPanel">
+<button class="collection-toggle" id="agroCollectionToggle" type="button" aria-expanded="false" aria-controls="agroCollectionPanel">
           <span class="collection-toggle-copy">
             <span class="collection-index">02 / AGRITECH PRODUCTS</span>
             <span class="collection-title">Digital tools for agriculture.</span>
@@ -1176,10 +1130,9 @@
           </span>
           <span class="collection-toggle-icon" aria-hidden="true"><span></span><span></span></span>
         </button>
-        <div class="collection-panel is-expanded" id="agroCollectionPanel" aria-hidden="false">
+        <div class="collection-panel" id="agroCollectionPanel" aria-hidden="true" inert>
           <div class="collection-panel-inner">
             <div class="collection-controls">
-              <span class="collection-hint">SCROLL TO EXPLORE</span>
               <div class="collection-arrows">
                 <button class="collection-arrow" type="button" data-scroll-prev aria-label="Scroll Agritech products left" disabled><span aria-hidden="true">←</span></button>
                 <button class="collection-arrow" type="button" data-scroll-next aria-label="Scroll Agritech products right"><span aria-hidden="true">→</span></button>
@@ -1189,10 +1142,9 @@
           <article class="project-row" data-project-reveal>
             <div class="project-media maizeplan-screenshot"><img src="https://raw.githubusercontent.com/wmlauzi/inestagro/main/src/assets/maize-planner/maize-planner-dashboard.png" alt="MaizePlan dashboard showing its maize farm planning tools." width="1280" height="800" loading="lazy" decoding="async"></div>
             <div class="project-info">
-              <div class="project-tags"><span class="project-category">Agritech tool</span><span class="project-status">In development</span></div>
+              <div class="project-tags"><span class="project-status">In development</span></div>
               <h3>MaizePlan</h3>
-              <p class="project-description">A maize farm-planning tool designed to help growers estimate plant population, seed requirements and fertiliser needs before planting. I’m developing the calculation workflows and farmer-facing interface.</p>
-              <div class="project-details project-meta" aria-label="Project focus"><span>Seed planning</span><span>Fertiliser planning</span><span>Plant population</span></div>
+              <p class="project-description">A maize planning tool for estimating plant population, seed requirements and fertiliser needs before planting.</p>
               <a class="project-link" href="https://maizeplan.vercel.app/" target="_blank" rel="noopener noreferrer">Open tool <span class="project-arrow" aria-hidden="true">↗</span></a>
             </div>
           </article>
@@ -1201,10 +1153,9 @@
               <span class="project-brand-caption">INEST AGRO / FARM FINANCIAL TOOL</span><span class="project-brand-mark">Farm<span>Margin.</span></span><span class="project-brand-name">Gross Margin Calculator</span><span class="project-brand-url">COSTS · REVENUE · REPORTS ↗</span>
             </div>
             <div class="project-info">
-              <div class="project-tags"><span class="project-category">Agritech tool</span><span class="project-status">In development</span></div>
+              <div class="project-tags"><span class="project-status">In development</span></div>
               <h3>FarmMargin</h3>
-              <p class="project-description">A farm gross-margin tool that helps users organise production costs, estimate revenue from yield and price assumptions, and review possible enterprise margins. I’m developing the farm setup, cost-entry and results/reporting workflows.</p>
-              <div class="project-details project-meta" aria-label="Project focus"><span>Production costs</span><span>Revenue estimates</span><span>Gross margin reports</span></div>
+              <p class="project-description">A gross-margin tool for organising production costs, estimating revenue and reviewing possible farm enterprise margins.</p>
               <a class="project-link" href="https://farmmargin.vercel.app/" target="_blank" rel="noopener noreferrer">Open tool <span class="project-arrow" aria-hidden="true">↗</span></a>
             </div>
           </article>
@@ -1220,7 +1171,7 @@
         <header class="skills-intro">
           <p class="mono eyebrow">CAPABILITIES / 03</p>
           <h2>Skills &amp; Technical Capabilities</h2>
-          <p class="section-intro">I’m a developer with an agritech specialization, combining web development with an agricultural background to build practical digital solutions. My capabilities are shaped by hands-on projects, technical learning and experience across agriculture and IT.</p>
+          <p class="section-intro">My skills combine hands-on web development, agricultural knowledge and foundational IT support.</p>
         </header>
 
         <div class="capability-grid">
@@ -1311,30 +1262,14 @@
 
         <section class="tools-block" aria-labelledby="toolsHeading">
           <header class="tools-heading">
-            <h3 id="toolsHeading">05 / Tools &amp; Development Workflow</h3>
-            <p>Tools and technologies I use across my website and agritech projects.</p>
+            <h3 id="toolsHeading">Tools I Use</h3>
+            <p>Development and delivery tools used across my projects.</p>
           </header>
           <div class="tools-grid">
             <div class="tools-group">
-              <h4>Languages &amp; Frameworks</h4>
-              <ul class="tools-list">
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>React</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Vite</li>
-              </ul>
-            </div>
-            <div class="tools-group">
               <h4>Development &amp; Delivery</h4>
               <ul class="tools-list">
-                <li>Visual Studio Code</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>npm</li>
-                <li>Vercel</li>
-                <li>Vitest</li>
+                <li>Visual Studio Code</li><li>Git</li><li>GitHub</li><li>npm</li><li>Vercel</li><li>Vitest</li>
               </ul>
             </div>
           </div>
@@ -1357,7 +1292,7 @@
       </div>
       <nav class="footer-nav" aria-label="Footer navigation">
         <p class="footer-heading">Explore</p>
-        <a href="#services">Focus Areas</a><a href="#development">Web Projects</a><a href="#agritech">Agritech</a><a href="#toolkit">Skills</a><a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#about">About</a><a href="#development">Projects</a><a href="#toolkit">Skills</a><a href="#contact">Contact</a>
       </nav>
       <div class="footer-contact">
         <p class="footer-heading">Have a project or question?</p>
