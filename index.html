@@ -878,6 +878,72 @@
       }
     }
 
+  
+    
+    /* Responsive scale and browser-width refinement */
+    @media (min-width: 701px) {
+      .wrap {
+        width: min(1480px, calc(100% - clamp(48px, 8vw, 128px)));
+      }
+    }
+
+    body {
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .lede {
+      font-size: clamp(18px, 1.5vw, 20px);
+    }
+    .section-intro,
+    #services .section-intro,
+    #development .section-intro,
+    #toolkit .section-intro {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+    .info-card p,
+    .project-description,
+    .skill-summary,
+    .capability-summary {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .project-contribution { font-size: 15px; line-height: 1.8; }
+    .project-detail { font-size: 13px; }
+    .project-detail span:first-child { font-size: 11px; }
+    .project-tech span { font-size: 11px; }
+    .nav-links a { font-size: 12px; }
+    .availability { font-size: 12px; }
+    .service-label,
+    .project-number,
+    .project-category { font-size: 12px; }
+    .button { font-size: 12px; }
+    .project-link { font-size: 12px; }
+    .skill-list li,
+    .tools-list li { font-size: 12px; }
+    .capability-skills li { font-size: 11px; }
+    .footer-copy,
+    .footer-invitation,
+    .form-note { font-size: 14px; }
+    .footer-nav a { font-size: 13px; }
+    .footer-bottom p,
+    .footer-top { font-size: 12px; }
+
+    @media (max-width: 700px) {
+      body { font-size: 16px; }
+      .wrap { width: min(100% - 40px, 1480px); }
+      .lede { font-size: 17px; }
+      .section-intro,
+      #services .section-intro,
+      #development .section-intro,
+      #toolkit .section-intro { font-size: 16px; }
+      .info-card p,
+      .project-description,
+      .skill-summary,
+      .capability-summary { font-size: 15px; }
+      .project-detail { font-size: 12px; }
+    }
+
   </style>
 </head>
 
