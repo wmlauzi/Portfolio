@@ -59,6 +59,72 @@ if (projectRows.length && !prefersReducedMotion && "IntersectionObserver" in win
   projectRows.forEach((row) => projectObserver.observe(row));
 }
 
+
+/* Independent expandable project collections and horizontal card tracks */
+document.querySelectorAll(".collection-toggle").forEach((toggle) => {
+  const panelId = toggle.getAttribute("aria-controls");
+  const panel = panelId ? document.getElementById(panelId) : null;
+  if (!panel) return;
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    const nextExpanded = !expanded;
+    toggle.setAttribute("aria-expanded", String(nextExpanded));
+    panel.classList.toggle("is-expanded", nextExpanded);
+    panel.setAttribute("aria-hidden", String(!nextExpanded));
+    panel.inert = !nextExpanded;
+    if (nextExpanded) {
+      requestAnimationFrame(() => {
+        panel.querySelectorAll("[data-project-reveal]").forEach((card) => card.classList.add("is-visible"));
+        panel.querySelectorAll(".projects").forEach((track) => {
+          track.dispatchEvent(new Event("scroll"));
+        });
+      });
+    }
+  });
+});
+
+document.querySelectorAll(".collection-panel").forEach((panel) => {
+  const track = panel.querySelector(".projects");
+  const previous = panel.querySelector("[data-scroll-prev]");
+  const next = panel.querySelector("[data-scroll-next]");
+  if (!track || !previous || !next) return;
+
+  const updateArrows = () => {
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const canScroll = maxScroll > 2;
+    previous.disabled = !canScroll || track.scrollLeft <= 2;
+    next.disabled = !canScroll || track.scrollLeft >= maxScroll - 2;
+  };
+
+  previous.addEventListener("click", () => {
+    track.scrollBy({ left: -Math.max(track.clientWidth * 0.82, 260), behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: Math.max(track.clientWidth * 0.82, 260), behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
+
+  track.addEventListener("scroll", updateArrows, { passive: true });
+  track.addEventListener("wheel", (event) => {
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX) && track.scrollWidth > track.clientWidth) {
+      const atStart = track.scrollLeft <= 0 && event.deltaY < 0;
+      const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1 && event.deltaY > 0;
+      if (!atStart && !atEnd) {
+        track.scrollLeft += event.deltaY;
+        event.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  if ("ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(updateArrows);
+    resizeObserver.observe(track);
+  } else {
+    window.addEventListener("resize", updateArrows, { passive: true });
+  }
+  updateArrows();
+});
+
 document.querySelectorAll("[data-subject]").forEach((link) => {
   link.addEventListener("click", () => {
     const subjectInput = document.querySelector('#contactForm [name="subject"]');
