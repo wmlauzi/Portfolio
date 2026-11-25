@@ -830,7 +830,55 @@
       .project-media:hover img, .project-media:focus-visible img { transform:none; }
     }
 
-</style>
+
+    /* Keep both project disciplines inside one coherent showcase */
+    .work-jump-links {
+      margin: 30px 0 48px;
+      gap: 10px;
+    }
+    .work-jump-links a {
+      min-height: 56px;
+      padding: 12px 16px;
+      border-color: var(--line);
+      background: rgba(255,255,255,.52);
+    }
+    .work-jump-links a:hover,
+    .work-jump-links a:focus-visible {
+      background: var(--lime);
+      border-color: var(--ink);
+    }
+    .work-category + .work-category {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .work-category .collection-toggle {
+      padding-top: 24px;
+    }
+    .work-category .collection-toggle:focus-visible {
+      outline-offset: 5px;
+    }
+    .work-category .collection-description {
+      max-width: 62ch;
+    }
+    @media (max-width: 639px) {
+      .work-jump-links {
+        margin: 24px 0 34px;
+        gap: 8px;
+      }
+      .work-jump-links a {
+        min-height: 54px;
+        gap: 8px;
+        padding: 10px;
+        font-size: 12px;
+      }
+      .work-category + .work-category {
+        margin-top: 34px;
+        padding-top: 10px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
@@ -974,9 +1022,9 @@
 
     <section id="development" data-section-reveal>
       <div class="wrap">
-        <p class="mono eyebrow">SELECTED WORK / 01</p>
+        <p class="mono eyebrow">SELECTED WORK / 01–02</p>
         <h2>Projects built to be useful.</h2>
-        <p class="section-intro">Explore my work across business websites and agricultural technology. Each project is built around a practical need, from helping businesses present their services online to making farm planning decisions easier.</p>
+        <p class="section-intro">My work brings together two connected interests: building useful digital experiences for businesses and applying software to practical challenges in agriculture. Both are driven by the same goal — making technology useful in the real world.</p>
 
         <nav class="work-jump-links" aria-label="Explore project categories">
           <a href="#web-projects"><span>01</span> Web Development <span aria-hidden="true">↘</span></a>
@@ -1051,14 +1099,9 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="agritech" data-section-reveal>
-      <div class="wrap">
-        <p class="mono eyebrow">SELECTED WORK / 02 · AGRITECH</p>
-        <h2>Building tools for better farm decisions.</h2>
-        <p class="section-intro">These digital products are being developed through iNest Agro, an independent Malawian agritech company. Explore each product to see how I’m applying software to practical maize production and farm business challenges.</p>
-        <button class="collection-toggle" id="agroCollectionToggle" type="button" aria-expanded="true" aria-controls="agroCollectionPanel">
+
+        <div id="agritech" class="work-category">
+<button class="collection-toggle" id="agroCollectionToggle" type="button" aria-expanded="true" aria-controls="agroCollectionPanel">
           <span class="collection-toggle-copy">
             <span class="collection-index">02 / AGRITECH PRODUCTS</span>
             <span class="collection-title">Digital tools for agriculture.</span>
@@ -1103,10 +1146,10 @@
           </div>
         </div>
         <p class="mono muted" style="margin-top:24px">PRODUCTS DEVELOPED UNDER INEST AGRO · MALAWI</p>
+        </div>
       </div>
     </section>
-
-    <section id="toolkit" data-section-reveal>
+<section id="toolkit" data-section-reveal>
       <div class="wrap">
         <header class="skills-intro">
           <p class="mono eyebrow">CAPABILITIES / 03</p>
