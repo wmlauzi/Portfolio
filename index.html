@@ -731,7 +731,8 @@
   
     /* Compact project cards */
     .projects { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:18px; overflow:visible; padding:0; margin:0; scroll-snap-type:none; }
-    .agritech-projects { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    /* Match the three-column desktop layout used by web project cards. */
+    .agritech-projects { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .project-row, .project-row:nth-child(even) { display:flex; min-width:0; height:100%; flex-direction:column; align-items:stretch; gap:10px; padding:18px; border:1px solid var(--line); background:var(--card); }
     .project-row:last-child { border-bottom:1px solid var(--line); }
     .project-media { display:block; width:100%; max-height:none; aspect-ratio:16/10; flex:0 0 auto; overflow:hidden; background:var(--ink); }
