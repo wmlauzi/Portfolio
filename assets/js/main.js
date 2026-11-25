@@ -1,6 +1,33 @@
 const menuToggle = document.querySelector("#menuToggle");
 const navLinks = document.querySelector("#navLinks");
 
+const closeMenu = () => {
+  if (!menuToggle || !navLinks) return;
+  navLinks.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+};
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  });
+
+  navLinks.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+}
+
 const projectRows = document.querySelectorAll("[data-project-reveal]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealSections = document.querySelectorAll("[data-section-reveal]");
@@ -34,39 +61,31 @@ if (projectRows.length && !prefersReducedMotion && "IntersectionObserver" in win
 
 document.querySelectorAll("[data-subject]").forEach((link) => {
   link.addEventListener("click", () => {
-    document.querySelector('#contactForm [name="subject"]').value = link.dataset.subject;
+    const subjectInput = document.querySelector('#contactForm [name="subject"]');
+    if (subjectInput) subjectInput.value = link.dataset.subject || "";
   });
 });
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-navLinks.addEventListener("click", (event) => {
-  if (event.target.closest("a")) {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }
-});
-
-document.querySelector("#year").textContent = new Date().getFullYear();
+const yearElement = document.querySelector("#year");
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
 const backTop = document.querySelector("#backTop");
-const updateBackTop = () => {
-  backTop.classList.toggle("visible", window.scrollY > 600);
-};
-window.addEventListener("scroll", updateBackTop, { passive: true });
-updateBackTop();
-backTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
-});
+if (backTop) {
+  const updateBackTop = () => {
+    backTop.classList.toggle("visible", window.scrollY > 600);
+  };
+  window.addEventListener("scroll", updateBackTop, { passive: true });
+  updateBackTop();
+  backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
+}
 
 const copyEmail = document.querySelector("#copyEmail");
 const copyStatus = document.querySelector("#copyStatus");
 const emailAddress = "wbmlauzi@gmail.com";
 let copyStatusTimer;
-copyEmail.addEventListener("click", async () => {
+if (copyEmail && copyStatus) copyEmail.addEventListener("click", async () => {
   let copied = false;
   if (navigator.clipboard && window.isSecureContext) {
     try {
@@ -99,7 +118,8 @@ copyEmail.addEventListener("click", async () => {
   copyStatusTimer = window.setTimeout(() => { copyStatus.textContent = ""; }, 3000);
 });
 
-document.querySelector("#contactForm").addEventListener("submit", (event) => {
+const contactForm = document.querySelector("#contactForm");
+if (contactForm) contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
