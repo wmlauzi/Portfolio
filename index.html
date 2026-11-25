@@ -943,6 +943,110 @@
       .project-detail { font-size: 12px; }
     }
 
+
+    /* Improve readability and keep the layout within the viewport */
+    html, body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    body {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .wrap {
+      width: min(1440px, calc(100% - clamp(32px, 5vw, 80px)));
+    }
+
+    .lede { font-size: clamp(19px, 1.45vw, 22px); }
+    .section-intro,
+    #development .section-intro,
+    #toolkit .section-intro {
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .nav-links { gap: clamp(14px, 1.8vw, 26px); }
+    .nav-links a { font-size: 13px; }
+    .button { font-size: 14px; }
+    .collection-description { font-size: 16px; }
+    .collection-preview { font-size: 11px; }
+    .collection-index { font-size: 12px; }
+
+    .project-row,
+    .project-row:nth-child(even) {
+      flex-basis: clamp(300px, 30vw, 380px);
+      min-height: 0;
+      padding: 20px;
+      gap: 14px;
+    }
+
+    .project-info h3 {
+      font-size: clamp(22px, 1.7vw, 26px);
+      line-height: 1.2;
+    }
+
+    .project-description {
+      min-height: 0;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-line-clamp: 4;
+    }
+
+    .project-status,
+    .project-category { font-size: 11px; }
+    .project-meta > span { font-size: 10px; }
+    .project-link { min-height: 42px; font-size: 13px; }
+
+    .capability-summary,
+    .skill-summary,
+    .info-card p { font-size: 16px; line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 40px); }
+      body { font-size: 17px; }
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-basis: clamp(290px, 44vw, 360px);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { width: calc(100% - 32px); }
+      body { font-size: 16px; }
+      section { padding: 68px 0; }
+      .lede { font-size: 18px; }
+      .section-intro,
+      #development .section-intro,
+      #toolkit .section-intro { font-size: 16px; }
+      .collection-title { font-size: clamp(23px, 6vw, 28px); }
+      .collection-description { font-size: 15px; }
+      .projects { gap: 14px; }
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-basis: min(88vw, 380px);
+        min-height: 0;
+        padding: 16px;
+      }
+      .project-info h3 { font-size: 23px; }
+      .project-description { font-size: 16px; line-height: 1.6; }
+      .project-status,
+      .project-category { font-size: 11px; }
+      .project-link { font-size: 13px; }
+      .nav-links a { font-size: 15px; }
+      .footer-copy,
+      .footer-invitation { font-size: 15px; }
+    }
+
+    @media (max-width: 380px) {
+      .wrap { width: calc(100% - 28px); }
+      .project-row,
+      .project-row:nth-child(even) { flex-basis: 88vw; }
+      .project-info h3 { font-size: 22px; }
+      .project-description { font-size: 15px; }
+    }
+
   </style>
 </head>
 
